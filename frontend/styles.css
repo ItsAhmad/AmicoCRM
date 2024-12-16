@@ -186,3 +186,109 @@ h1 {
 p {
   color: #555555;
 }
+
+
+/* Button Styling */
+.add-project-button {
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.add-project-button:hover {
+  background-color: #0056b3;
+}
+
+/* Modal Overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; 
+  justify-content: center; 
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #ffffff; 
+  padding: 20px;
+  border-radius: 50px;
+  width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  max-height: 80%; /* Prevent overflowing screen */
+  overflow-y: auto; /* Allow scrolling if content is long */
+}
+
+/* Close Button */
+.close-button {
+  float: top;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #555555;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #000000;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 1em; /* Add space between form elements */
+}
+
+label {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #333333;
+}
+
+input,
+select {
+  padding: 0.8em;
+  font-size: 0.9em;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  width: auto; /* Adjust for checkboxes */
+}
+
+button[type="submit"] {
+  background-color: #007BFF;
+  color: #ffffff;
+  padding: 0.8em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Products Checkbox Group */
+div {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+

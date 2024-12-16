@@ -38,6 +38,122 @@
         <div class="stage">Closed Won</div>
         <div class="stage">Closed Lost</div>
       </div>
+
+      <!-- Add Project Button -->
+<button id="addProjectButton" class="add-project-button">Add Project</button>
+
+<!-- Modal -->
+<div id="projectModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Add Project</h2>
+    <form id="projectForm">
+      <label for="projectName">Project Name:</label>
+      <input type="text" id="projectName" name="projectName" required>
+
+      <label for="projectState">Project State:</label>
+      <select id="projectState" name="projectState" required>
+        <option value="">--Select a State--</option>
+        <option value="Alabama">Alabama</option>
+        <option value="Alaska">Alaska</option>
+        <option value="Arizona">Arizona</option>
+        <option value="Arkansas">Arkansas</option>
+        <option value="California">California</option>
+        <option value="Colorado">Colorado</option>
+        <option value="Connecticut">Connecticut</option>
+        <option value="Delaware">Delaware</option>
+        <option value="Florida">Florida</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Hawaii">Hawaii</option>
+        <option value="Idaho">Idaho</option>
+        <option value="Illinois">Illinois</option>
+        <option value="Indiana">Indiana</option>
+        <option value="Iowa">Iowa</option>
+        <option value="Kansas">Kansas</option>
+        <option value="Kentucky">Kentucky</option>
+        <option value="Louisiana">Louisiana</option>
+        <option value="Maine">Maine</option>
+        <option value="Maryland">Maryland</option>
+        <option value="Massachusetts">Massachusetts</option>
+        <option value="Michigan">Michigan</option>
+        <option value="Minnesota">Minnesota</option>
+        <option value="Mississippi">Mississippi</option>
+        <option value="Missouri">Missouri</option>
+        <option value="Montana">Montana</option>
+        <option value="Nebraska">Nebraska</option>
+        <option value="Nevada">Nevada</option>
+        <option value="New Hampshire">New Hampshire</option>
+        <option value="New Jersey">New Jersey</option>
+        <option value="New Mexico">New Mexico</option>
+        <option value="New York">New York</option>
+        <option value="North Carolina">North Carolina</option>
+        <option value="North Dakota">North Dakota</option>
+        <option value="Ohio">Ohio</option>
+        <option value="Oklahoma">Oklahoma</option>
+        <option value="Oregon">Oregon</option>
+        <option value="Pennsylvania">Pennsylvania</option>
+        <option value="Rhode Island">Rhode Island</option>
+        <option value="South Carolina">South Carolina</option>
+        <option value="South Dakota">South Dakota</option>
+        <option value="Tennessee">Tennessee</option>
+        <option value="Texas">Texas</option>
+        <option value="Utah">Utah</option>
+        <option value="Vermont">Vermont</option>
+        <option value="Virginia">Virginia</option>
+        <option value="Washington">Washington</option>
+        <option value="West Virginia">West Virginia</option>
+        <option value="Wisconsin">Wisconsin</option>
+        <option value="Wyoming">Wyoming</option>
+      </select>
+
+      
+
+      <label for="projectAddress">Project Address:</label>
+      <input type="text" id="projectAddress" name="projectAddress" required>
+
+      <label for="projectValue">Project Value:</label>
+      <input type="number" id="projectValue" name="projectValue" required>
+
+      <label for="projectStage">Project Stage:</label>
+      <select id="projectStage" name="projectStage" required>
+        <option value="Leads">Leads</option>
+        <option value="Follow Up">Follow Up</option>
+        <option value="Specified">Specified</option>
+        <option value="Quoted">Quoted</option>
+        <option value="Negotiation">Negotiation</option>
+        <option value="5 Yard Line">5 Yard Line</option>
+        <option value="Closed Won">Closed Won</option>
+        <option value="Closed Lost">Closed Lost</option>
+      </select>
+
+      <label>Products:</label>
+      <div>
+        <input type="checkbox" id="product1" name="products" value="Product 1">
+        <label for="product1">Product 1</label>
+      </div>
+      <div>
+        <input type="checkbox" id="product2" name="products" value="Product 2">
+        <label for="product2">Product 2</label>
+      </div>
+      <!-- Add more products as needed -->
+
+      <label for="contactFirstName">Contact First Name:</label>
+      <input type="text" id="contactFirstName" name="contactFirstName" required>
+
+      <label for="contactLastName">Contact Last Name:</label>
+      <input type="text" id="contactLastName" name="contactLastName" required>
+
+      <label for="contactPhone">Phone Number:</label>
+      <input type="tel" id="contactPhone" name="contactPhone" required>
+
+      <label for="contactEmail">Email:</label>
+      <input type="email" id="contactEmail" name="contactEmail" required>
+
+      <button type="submit">Add to Pipeline</button>
+    </form>
+    <script src="script.js"></script>
+  </div>
+  </div>
     </main>
   </div>
 </body>
