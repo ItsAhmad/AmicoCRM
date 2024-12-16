@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amico CRM - Home</title>
+  <title>Amico CRM - Pipeline</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <!-- Logo -->
+    <!-- Header -->
     <header class="header">
       <img src="https://www.amico.com/_next/image?url=%2Flogos%2Famico-logo.png&w=256&q=75" alt="Amico Logo" class="logo">
     </header>
@@ -17,7 +17,7 @@
     <nav class="sidebar">
       <ul class="nav-list">
         <li class="nav-item"><a href="#home">Home</a></li>
-        <li class="nav-item"><a href="#pipeline">Pipeline</a></li>
+        <li class="nav-item"><a href="#pipeline" class="active">Pipeline</a></li>
         <li class="nav-item"><a href="#analytics">Analytics - Spire</a></li>
         <li class="nav-item"><a href="#tasks">Tasks</a></li>
         <li class="nav-item"><a href="#knowledge-base">Knowledge Base</a></li>
@@ -26,8 +26,18 @@
 
     <!-- Main Content Area -->
     <main class="content">
-      <h1>Welcome to the new Amico CRM!</h1>
-      <p>Select an option from the navigation bar to get started.</p>
+      <h1>Pipeline</h1>
+      <div class="pipeline">
+        <!-- Pipeline Stages -->
+        <div class="stage">Leads</div>
+        <div class="stage">Follow Up</div>
+        <div class="stage">Specified</div>
+        <div class="stage">Quoted</div>
+        <div class="stage">Negotiation</div>
+        <div class="stage">5 Yard Line</div>
+        <div class="stage">Closed Won</div>
+        <div class="stage">Closed Lost</div>
+      </div>
     </main>
   </div>
 </body>
