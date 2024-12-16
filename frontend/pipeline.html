@@ -29,16 +29,33 @@
       <h1>Pipeline</h1>
       <div class="pipeline">
         <!-- Pipeline Stages -->
-        <div class="stage">Leads</div>
-        <div class="stage">Follow Up</div>
-        <div class="stage">Specified</div>
-        <div class="stage">Quoted</div>
-        <div class="stage">Negotiation</div>
-        <div class="stage">5 Yard Line</div>
-        <div class="stage">Closed Won</div>
-        <div class="stage">Closed Lost</div>
+        <table style="width:100%">
+          <thead>
+            <tr>
+              <th>Leads</th>
+              <th>Follow Up</th>
+              <th>Specified</th>
+              <th>Quoted</th>
+              <th>Negotiation</th>
+              <th>5 Yard Line</th>
+              <th>Closed Won</th>
+              <th>Closed Lost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="stage-row">
+              <td class="stage" data-stage="Leads"></td>
+              <td class="stage" data-stage="Follow Up"></td>
+              <td class="stage" data-stage="Specified"></td>
+              <td class="stage" data-stage="Quoted"></td>
+              <td class="stage" data-stage="Negotiation"></td>
+              <td class="stage" data-stage="5 Yard Line"></td>
+              <td class="stage" data-stage="Closed Won"></td>
+              <td class="stage" data-stage="Closed Lost"></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-
       <!-- Add Project Button -->
 <button id="addProjectButton" class="add-project-button">Add Project</button>
 
@@ -105,8 +122,6 @@
         <option value="Wisconsin">Wisconsin</option>
         <option value="Wyoming">Wyoming</option>
       </select>
-
-      
 
       <label for="projectAddress">Project Address:</label>
       <input type="text" id="projectAddress" name="projectAddress" required>
@@ -219,10 +234,10 @@
 
       <button type="submit">Add to Pipeline</button>
     </form>
-    <script src="script.js"></script>
   </div>
   </div>
     </main>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>

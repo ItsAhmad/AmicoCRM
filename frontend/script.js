@@ -15,31 +15,35 @@ closeButton.addEventListener("click", () => {
 });
 
 // Add Project to Pipeline
-projectForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+projectForm.addEventListener('submit', (e) => {
+  e.preventDefault(); // Prevent default form submission
 
-  // Collect Form Data
-  const projectName = document.getElementById("projectName").value;
-  const projectState = document.getElementById("projectState").value;
-  const projectValue = document.getElementById("projectValue").value;
-  const projectStage = document.getElementById("projectStage").value;
+  // Get form values
+  const projectName = document.getElementById('projectName').value;
+  const projectStage = document.getElementById('projectStage').value;
 
-  // Create a New Project Box
-  const projectBox = document.createElement("div");
-  projectBox.className = "project-box";
-  projectBox.innerHTML = `
-    <strong>${projectName}</strong><br>
-    ${projectState}<br>
-    $${projectValue}
-  `;
+  // Create a button for the project
+  const projectButton = document.createElement('button');
+  projectButton.classList.add('project-button');
+  projectButton.textContent = projectName;
 
-  // Append to the Selected Stage
-  const stageElement = document.querySelector(`.stage:contains(${projectStage})`);
-  if (stageElement) {
-    stageElement.appendChild(projectBox);
+  // Add click event to button (optional: to view/edit details later)
+  projectButton.addEventListener('click', () => {
+    alert(`Project: ${projectName}`);
+  });
+
+  // Find the correct stage <td> by data attribute
+  const targetStage = document.querySelector(`.stage[data-stage="${projectStage}"]`);
+
+  if (targetStage) {
+    targetStage.appendChild(projectButton); // Append the button to the correct stage column
+  } else {
+    console.error('Stage not found:', projectStage);
   }
 
-  // Close Modal and Reset Form
+  // Close the modal
   projectModal.style.display = "none";
+
+  // Clear form inputs
   projectForm.reset();
 });

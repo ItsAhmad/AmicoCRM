@@ -70,12 +70,12 @@ body {
 .pipeline {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin: 0 0 0 0; 
   padding: 10px;
   background-color: #f9f9f9;
   border: 1px solid #e0e0e0;
   border-radius: 5px;
-  overflow-x: auto;
+  overflow-x: scroll;
   width: 100%;
 }
 
@@ -84,7 +84,7 @@ body {
   text-align: center;
   padding: 10px;
   margin: 0 5px;
-  background-color: #007BFF;
+  background-color: #ebf1f889;
   color: #ffffff;
   border-radius: 5px;
   font-weight: bold;
@@ -93,7 +93,7 @@ body {
 }
 
 .pipeline .stage:hover {
-  background-color: #0056b3;
+  background-color: #a0c7f0;
   cursor: pointer;
 }
 
@@ -171,6 +171,7 @@ body {
 .content {
   margin-left: 200px; /* space for the sidebar */
   margin-bottom: 700px; 
+  margin-top: 100px;
   padding: 20px;
   flex-grow: 1;
   display: flex;
@@ -298,4 +299,10 @@ div {
   gap: 0.5em;
 }
 
+.project-card p {
+  color:rgba(0, 2, 6, 0.914)
+}
 
+.project-card h3 {
+  color:rgb(7, 81, 209)
+}
