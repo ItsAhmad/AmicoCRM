@@ -221,13 +221,13 @@ p {
 /* Modal Content */
 .modal-content {
   background-color: #ffffff; 
-  padding: 20px;
+  padding: 100px;
   border-radius: 20px;
   width: 600px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: top;
   max-height: 95%; /* Prevent overflowing screen */
-  overflow-y: auto; /* Allow scrolling if content is long */
+  overflow-y: scroll; /* Allow scrolling if content is long */
 }
 
 .modal-content h2 {
@@ -254,6 +254,7 @@ form {
   display: flex;
   flex-direction: column; /* Stack items vertically */
   gap: 1em; /* Add space between form elements */
+  margin: 600px 0 0 0;
 }
 
 label {
