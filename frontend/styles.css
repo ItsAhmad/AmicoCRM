@@ -222,21 +222,27 @@ p {
 .modal-content {
   background-color: #ffffff; 
   padding: 20px;
-  border-radius: 50px;
+  border-radius: 20px;
   width: 600px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: left;
-  max-height: 80%; /* Prevent overflowing screen */
+  text-align: top;
+  max-height: 95%; /* Prevent overflowing screen */
   overflow-y: auto; /* Allow scrolling if content is long */
+}
+
+.modal-content h2 {
+  margin: 0 50px 900px 0; /* Top, right, bottom, left margins */
+  font-size: 1.5rem; /* Adjust font size for better appearance */
 }
 
 /* Close Button */
 .close-button {
-  float: top;
+  float: left;
   font-size: 1.5em;
   font-weight: bold;
   color: #555555;
   cursor: pointer;
+  margin: 0 0 900px 0;
 }
 
 .close-button:hover {
