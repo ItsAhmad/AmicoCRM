@@ -23,43 +23,97 @@
         <li class="nav-item"><a href="#knowledge-base">Knowledge Base</a></li>
       </ul>
     </nav>
-
-    <!-- Main Content Area -->
-    <main class="content">
-      <h1>Pipeline</h1>
-      <div class="pipeline">
-        <!-- Pipeline Stages -->
-        <table style="width:100%">
+  </div>
+  
+  <div class="pipeline-wrapper">
+    <div class="pipeline-container">
+      <div class="pipeline-view-container">
+        <div class="pipeline-view-contained">
+        <table class="pipeline-headers">
           <thead>
-            <tr>
-              <th>Leads</th>
-              <th>Follow Up</th>
-              <th>Specified</th>
-              <th>Quoted</th>
-              <th>Negotiation</th>
-              <th>5 Yard Line</th>
-              <th>Closed Won</th>
-              <th>Closed Lost</th>
+            <tr class="pipeline-headers-row">
+              <th data-name="leads" class="stages-header">
+                <div>
+                  <span class="pipeline-header-label">Leads</span>
+                  <a role="button" tabindex="0" title="Create" class="create-button"
+                  data-action="createInGroup" data-group="leads">
+                    <span class="fas fa-plus fa-sm"></span>
+                </a>
+                </div>
+              </th>
+              <th data-name="followup" class="stages-header">
+                <div>
+                  <span class="pipeline-header-label">Follow Up</span>
+                  <a role="button" tabindex="0" title="Create" class="create-button"
+                  data-action="createInGroup" data-group="leads">
+                    <span class="fas fa-plus fa-sm"></span>
+                </a>
+                </div>
+              </th>
+              <th data-name="specified" class="stages-header">
+                <div>
+                  <span class="pipeline-header-label">Specified</span>
+                  <a role="button" tabindex="0" title="Create" class="create-button"
+                  data-action="createInGroup" data-group="leads">
+                    <span class="fas fa-plus fa-sm"></span>
+                </a>
+                </div>
+              </th>
+              <th data-name="quoted" class="stages-header">
+                <div>
+                  <span class="pipeline-header-label">Specified</span>
+                  <a role="button" tabindex="0" title="Create" class="create-button"
+                  data-action="createInGroup" data-group="quoted">
+                    <span class="fas fa-plus fa-sm"></span>
+                </a>
+                </div>
+              </th>
+              <th data-name="negotiation" class="stages-header">
+                <div>
+                  <span class="pipeline-header-label">Negotiation</span>
+                  <a role="button" tabindex="0" title="Create" class="create-button"
+                  data-action="createInGroup" data-group="quoted">
+                    <span class="fas fa-plus fa-sm"></span>
+                </a>
+                </div>
+              </th>
+              <th data-name="yardline" class="stages-header">
+                <div>
+                  <span class="pipeline-header-label">5 Yard Line</span>
+                  <a role="button" tabindex="0" title="Create" class="create-button"
+                  data-action="createInGroup" data-group="quoted">
+                    <span class="fas fa-plus fa-sm"></span>
+                </a>
+                </div>
+              </th>
+              <th data-name="closedwon" class="stages-header">
+                <div>
+                  <span class="pipeline-header-label">Closed Won</span>
+                  <a role="button" tabindex="0" title="Create" class="create-button"
+                  data-action="createInGroup" data-group="quoted">
+                    <span class="fas fa-plus fa-sm"></span>
+                </a>
+                </div>
+              </th>
+              <th data-name="closedlost" class="stages-header">
+                <div>
+                  <span class="pipeline-header-label">Closed Lost</span>
+                  <a role="button" tabindex="0" title="Create" class="create-button"
+                  data-action="createInGroup" data-group="quoted">
+                    <span class="fas fa-plus fa-sm"></span>
+                </a>
+                </div>
+              </th>
             </tr>
           </thead>
-          <tbody>
-            <tr class="stage-row">
-              <td class="stage" data-stage="Leads"></td>
-              <td class="stage" data-stage="Follow Up"></td>
-              <td class="stage" data-stage="Specified"></td>
-              <td class="stage" data-stage="Quoted"></td>
-              <td class="stage" data-stage="Negotiation"></td>
-              <td class="stage" data-stage="5 Yard Line"></td>
-              <td class="stage" data-stage="Closed Won"></td>
-              <td class="stage" data-stage="Closed Lost"></td>
-            </tr>
-          </tbody>
         </table>
       </div>
-      <!-- Add Project Button -->
-<button id="addProjectButton" class="add-project-button">Add Project</button>
+    </div>
+  </div>  
+</div>
+    
 
-<!-- Modal -->
+<!-- Modal to add project -->
 <div id="projectModal" class="modal">
   <div class="modal-content">
     <span class="close-button">&times;</span>

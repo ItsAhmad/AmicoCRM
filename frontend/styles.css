@@ -1,115 +1,3 @@
-/* login.css */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.login-container {
-  background: #ffffff;
-  padding: 2em;
-  border-radius: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 300px;
-}
-
-.logo {
-  max-width: 150px;
-  margin-bottom: 1em;
-}
-
-.quote {
-  font-size: 1.5em;
-  color: #555555;
-  margin-bottom: 1.5em;
-}
-
-.login-form .form-group {
-  margin-bottom: 1em;
-  text-align: left;
-}
-
-.login-form label {
-  display: block;
-  font-size: 0.9em;
-  color: #333333;
-  margin-bottom: 0.5em;
-}
-
-.login-form input {
-  width: 100%;
-  padding: 0.8em;
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-  font-size: 0.9em;
-}
-
-.login-button {
-  background-color: #007BFF;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  padding: 0.8em;
-  font-size: 1em;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 1em;
-}
-
-.login-button:hover {
-  background-color: #0056b3;
-}
-
-
-/* Pipeline Container */
-.pipeline {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 0 0 0; 
-  padding: 10px;
-  background-color: #f9f9f9;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  overflow-x: scroll;
-  width: 100%;
-}
-
-.pipeline .stage {
-  flex: 1;
-  text-align: center;
-  padding: 10px;
-  margin: 0 5px;
-  background-color: #ebf1f889;
-  color: #ffffff;
-  border-radius: 5px;
-  font-weight: bold;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  white-space: nowrap;
-}
-
-.pipeline .stage:hover {
-  background-color: #a0c7f0;
-  cursor: pointer;
-}
-
-
-/* home.css */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  display: flex;
-  height: 100vh;
-}
-
-.container {
-  display: flex;
-  width: 100%;
-}
 
 /* Header with Logo */
 .header {
@@ -167,31 +55,9 @@ body {
   background-color: #0056b3;
 }
 
-/* Main Content */
-.content {
-  margin-left: 200px; /* space for the sidebar */
-  margin-bottom: 700px; 
-  margin-top: 100px;
-  padding: 20px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align content to the top */
-  justify-content: flex-start; /* Ensure content starts at the top */
-}
-
-h1 {
-  color: #333333;
-}
-
-p {
-  color: #555555;
-}
-
 
 /* Button Styling */
 .add-project-button {
-  margin: 20px;
   padding: 10px 20px;
   background-color: #007BFF;
   color: white;
@@ -222,12 +88,13 @@ p {
 /* Modal Content */
 .modal-content {
   background-color: #ffffff; 
-  padding: 100px;
+  padding: 40px;
   border-radius: 20px;
   width: 600px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: top;
   max-height: 95%; /* Prevent overflowing screen */
+  margin: 50px 0 15px 0; 
   overflow-y: scroll; /* Allow scrolling if content is long */
 }
 
@@ -299,10 +166,80 @@ div {
   gap: 0.5em;
 }
 
-.project-card p {
-  color:rgba(0, 2, 6, 0.914)
+.project-wrapper {
+  padding: 0px;
 }
 
-.project-card h3 {
-  color:rgb(7, 81, 209)
+.pipeline-wrapper {
+  display: block;
+  justify-content: center; /* Centers content horizontally */
+  align-items: flex-start; /* Aligns to the top of the page */
+  height: 100vh; /* Full viewport height */
+  padding-top: 20px; /* Adds some space from the top */
+  box-sizing: border-box;
+}
+
+/* Centered table container */
+.pipeline-container {
+  max-width: 90%; /* Restricts width to keep it clean */
+  width: 1200px; /* Set a fixed width if desired */
+  margin: 50px 75px 400px 250px;
+  font-family: Arial, sans-serif;
+}
+
+/* Table styling */
+.pipeline-headers {
+  width: 100%;
+  border-collapse: collapse; /* Prevents spacing issues */
+}
+
+.pipeline-headers-row {
+  display: flex; /* Makes the row flex to allow horizontal layout */
+  justify-content: space-between; /* Adds space between columns */
+  gap: 20px; /* Spacing between stages */
+}
+
+.stages-header {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.pipeline-header-label {
+  font-weight: bold;
+  color: #333333;
+  flex: 1; /* Makes the label take equal space within the th */
+  text-align: center;
+}
+
+.create-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-button:hover {
+  background-color: #0056b3;
+}
+
+.fas.fa-plus.fa-sm {
+  font-size: 14px;
+}
+
+.pipeline-header-label {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
 }

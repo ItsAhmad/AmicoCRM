@@ -1,0 +1,12 @@
+/* home.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    width: 100%;
+  }

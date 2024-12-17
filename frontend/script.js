@@ -15,35 +15,32 @@ closeButton.addEventListener("click", () => {
 });
 
 // Add Project to Pipeline
-projectForm.addEventListener('submit', (e) => {
-  e.preventDefault(); // Prevent default form submission
+document.getElementById("projectForm").addEventListener("submit", function (event) {
+  event.preventDefault();
 
-  // Get form values
-  const projectName = document.getElementById('projectName').value;
-  const projectStage = document.getElementById('projectStage').value;
+  // Collect form data
+  const projectName = document.getElementById("projectName").value;
+  const projectState = document.getElementById("projectState").value;
+  const projectValue = document.getElementById("projectValue").value;
+  const projectStage = document.getElementById("projectStage").value;
 
-  // Create a button for the project
-  const projectButton = document.createElement('button');
-  projectButton.classList.add('project-button');
-  projectButton.textContent = projectName;
+  // Create a project card
+  const projectCard = document.createElement("div");
+  projectCard.classList.add("project-card");
+  projectCard.innerHTML = `
+    <h3>${projectName}</h3>
+    <p>State: ${projectState}</p>
+    <p>Value: $${parseFloat(projectValue).toLocaleString()}</p>
+  `;
 
-  // Add click event to button (optional: to view/edit details later)
-  projectButton.addEventListener('click', () => {
-    alert(`Project: ${projectName}`);
-  });
-
-  // Find the correct stage <td> by data attribute
-  const targetStage = document.querySelector(`.stage[data-stage="${projectStage}"]`);
-
-  if (targetStage) {
-    targetStage.appendChild(projectButton); // Append the button to the correct stage column
-  } else {
-    console.error('Stage not found:', projectStage);
+  // Append to the correct stage
+  const stageContent = document.querySelector(`#${projectStage.toLowerCase().replace(" ", "-")} .stage-content`);
+  if (stageContent) {
+    stageContent.appendChild(projectCard);
   }
 
-  // Close the modal
-  projectModal.style.display = "none";
-
-  // Clear form inputs
-  projectForm.reset();
+  // Clear the form and close the modal
+  document.getElementById("projectForm").reset();
+  document.getElementById("projectModal").style.display = "none";
 });
+
