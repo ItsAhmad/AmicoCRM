@@ -200,7 +200,7 @@ div {
 .pipeline-headers-row {
   display: flex; /* Makes the row flex to allow horizontal layout */
   justify-content: space-between; /* Adds space between columns */
-  gap: 20px; /* Spacing between stages */
+  gap: 30px; /* Spacing between stages */
 }
 
 .stages-header {
@@ -211,6 +211,8 @@ div {
   padding: 15px 70px;
   text-align: center;
   align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem; /* Adjust spacing between columns */
 }
 
 .pipeline-header-label {
@@ -251,30 +253,49 @@ div {
 
 
 
-/* DEAL CARD CSS */ 
+/* DEAL CARD CSS */
 .deal-card {
-  background-color: #f4f4f4;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex; 
+  display: flex; /* Enables flexbox layout */
+  flex-direction: column; /* Ensures elements are stacked vertically */
+  padding: 10px; /* Add some padding around the content */
+  background-color: #f9f9f9; /* Light background for visibility */
+  border: 1px solid #ccc; /* Optional: Add a border */
+  border-radius: 5px; /* Optional: Rounded corners */
+  margin-bottom: 10px; /* Space between cards */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Card shadow */
+}
+
+.deal-card:hover {
+  background-color:#a4d4f7; 
 }
 
 .deal-title {
-  font-size: 1.2em;
+  margin: 0 0 10px 0; /* Adds space below the title */
+  font-size: 16px; /* Adjust title font size */
+  font-weight: bold; /* Make the title bold */
+}
+
+.deal-title h3 {
+  font-size: 1.2em !important;
   margin-bottom: 5px;
+  text-align: left;
+  margin: 0 0 10px 0; /* Adds space below the title */
+  font-size: 16px; /* Adjust title font size */
+  font-weight: bold; /* Make the title bold */
 }
 
 .deal-panel p {
-  margin: 5px 0;
-  font-size: 0.9em;
+  margin: 0 0 0 0;
+  font-size: 0.5em;
+}
+
+.deal-card p {
+  margin: 5px 0; /* Ensure consistent spacing for paragraphs */
 }
 
 .pipeline-columns {
   display: flex;
-  gap: 10px; /* Optional spacing between columns */
+  gap: 50px;
 }
 
 .group-column {
@@ -284,19 +305,18 @@ div {
   width: 200px; /* Adjust column width as needed */
   min-height: 600px;
   border: 1px solid #ddd; /* Optional styling */
-  padding: 10px;
+  padding: 9px;
 }
 
 .group-column-list {
   flex-grow: 1; /* Allow the list to grow inside the column */
   display: flex;
   flex-direction: column; /* Ensure cards stack vertically */
-  gap: 10px; /* Optional spacing between cards */
 }
 
 div.pipeline-view-container {
-  display: flex !important; /* Forces Flexbox to apply */
+  display: flex; /* Forces Flexbox to apply */
   flex-wrap: wrap; /* Controls wrapping of columns */
   justify-content: flex-start; /* Adjust alignment */
-  gap: 10px; /* Adds spacing between columns */
 }
+

@@ -49,7 +49,7 @@ form.addEventListener("submit", (e) => {
     // Append the deal card to the column's list
     const cardList = column.querySelector(".group-column-list");
     if (cardList) {
-      cardList.appendChild(dealCard);
+      cardList.prepend(dealCard);
       modal.style.display = "none";
       form.reset();
     } else {
