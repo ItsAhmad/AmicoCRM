@@ -26,7 +26,7 @@
   </div>
   
   <div class="pipeline-wrapper">
-    <div class="pipeline-container">
+    <div class="pipeline-container" data-scope="Opportunity" style="min-width: 1100px">
       <div class="pipeline-view-container">
         <div class="pipeline-view-contained">
         <table class="pipeline-headers">
@@ -37,8 +37,8 @@
                   <span class="pipeline-header-label">Deals</span>
                   <a role="button" tabindex="0" title="Create" class="addProjectButton"
                   data-action="createInGroup" data-group="leads">+
-                    <span class="fas fa-plus fa-sm"></span>
-                </a>
+                      <span class="fas fa-plus fa-sm"></span>
+                  </a>
                 </div>
               </th>
               <th data-name="specified" class="stages-header">
@@ -46,8 +46,8 @@
                   <span class="pipeline-header-label">Specified</span>
                   <a role="button" tabindex="0" title="Create" class="addProjectButton"
                   data-action="createInGroup" data-group="leads">+
-                    <span class="fas fa-plus fa-sm"></span>
-                </a>
+                      <span class="fas fa-plus fa-sm"></span>
+                  </a>
                 </div>
               </th>
               <th data-name="quoted" class="stages-header">
@@ -55,8 +55,8 @@
                   <span class="pipeline-header-label">Quoted</span>
                   <a role="button" tabindex="0" title="Create" class="addProjectButton"
                   data-action="createInGroup" data-group="quoted">+
-                    <span class="fas fa-plus fa-sm"></span>
-                </a>
+                      <span class="fas fa-plus fa-sm"></span>
+                  </a>
                 </div>
               </th>
               <th data-name="negotiation" class="stages-header">
@@ -64,8 +64,8 @@
                   <span class="pipeline-header-label">Negotiation</span>
                   <a role="button" tabindex="0" title="Create" class="addProjectButton"
                   data-action="createInGroup" data-group="quoted">+
-                    <span class="fas fa-plus fa-sm"></span>
-                </a>
+                      <span class="fas fa-plus fa-sm"></span>
+                  </a>
                 </div>
               </th>
               <th data-name="yardline" class="stages-header">
@@ -73,8 +73,8 @@
                   <span class="pipeline-header-label">5 Yard Line</span>
                   <a role="button" tabindex="0" title="Create" class="addProjectButton"
                   data-action="createInGroup" data-group="quoted">+
-                    <span class="fas fa-plus fa-sm"></span>
-                </a>
+                      <span class="fas fa-plus fa-sm"></span>
+                  </a>
                 </div>
               </th>
               <th data-name="closedwon" class="stages-header">
@@ -82,8 +82,8 @@
                   <span class="pipeline-header-label">Closed Won</span>
                   <a role="button" tabindex="0" title="Create" class="addProjectButton"
                   data-action="createInGroup" data-group="quoted">+
-                    <span class="fas fa-plus fa-sm"></span>
-                </a>
+                      <span class="fas fa-plus fa-sm"></span>
+                 </a>
                 </div>
               </th>
               <th data-name="closedlost" class="stages-header">
@@ -91,35 +91,83 @@
                   <span class="pipeline-header-label">Closed Lost</span>
                   <a role="button" tabindex="0" title="Create" class="addProjectButton"
                   data-action="createInGroup" data-group="quoted">+
-                    <span class="fas fa-plus fa-sm"></span>
-                  </a>
+                      <span class="fas fa-plus fa-sm"></span>
+                    </a>
                 </div>
               </th>
             </tr>
           </thead>
         </table>
       </div>
+
+      <div class="pipeline-table-placeholder" style="display: none;"></div>
       <div class="pipeline-table-container">
         <table class="pipeline-column-view" >
           <tbody>
             <tr class="pipeline-columns">
               <td class="group-column" data-name="deals">
                 <div>
-                  <div class="group-column-list sortable" data-name="deals">
-                    <div class="column-list-item sortable" data-id="">
-                      <div class="deal-panel"></div>
-                    </div>
+                    <div class="group-column-list sortable" data-name="deals">
+                      <div class="column-list-item sortable" data-id="">
+                      </div>
                   </div>
                   <div class ="show-more"></div>
                 </div>
               </td>
-              <td class="group-column" data-name="deals"></td>
-              <td class="group-column" data-name="specified"></td>
-              <td class="group-column" data-name="quoted"></td>
-              <td class="group-column" data-name="negotiation"></td>
-              <td class="group-column" data-name="yardline"></td>
-              <td class="group-column" data-name="closedwon"></td>
-              <td class="group-column" data-name="closedlost"></td>
+              <td class="group-column" data-name="specified">
+                <div>
+                  <div class="group-column-list sortable" data-name="specified">
+                    <div class="column-list-item sortable" data-id="">
+                    </div>
+                </div>
+                <div class ="show-more"></div>
+              </div>
+              </td>
+              <td class="group-column" data-name="quoted">
+                <div>
+                  <div class="group-column-list sortable" data-name="quoted">
+                    <div class="column-list-item sortable" data-id="">
+                    </div>
+                </div>
+                <div class ="show-more"></div>
+              </div>
+              </td>
+              <td class="group-column" data-name="negotiation">
+                <div>
+                  <div class="group-column-list sortable" data-name="negotiation">
+                    <div class="column-list-item sortable" data-id="">
+                    </div>
+                </div>
+                <div class ="show-more"></div>
+              </div>
+              </td>
+              <td class="group-column" data-name="yardline">
+                <div>
+                  <div class="group-column-list sortable" data-name="yardline">
+                    <div class="column-list-item sortable" data-id="">
+                    </div>
+                </div>
+                <div class ="show-more"></div>
+              </div>
+              </td>
+              <td class="group-column" data-name="closedwon">
+                <div>
+                  <div class="group-column-list sortable" data-name="closedwon">
+                    <div class="column-list-item sortable" data-id="">
+                    </div>
+                </div>
+                <div class ="show-more"></div>
+              </div>
+              </td>
+              <td class="group-column" data-name="closedlost">
+                <div>
+                  <div class="group-column-list sortable" data-name="closedlost">
+                    <div class="column-list-item sortable" data-id="">
+                    </div>
+                </div>
+                <div class ="show-more"></div>
+              </div>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -202,12 +250,12 @@
       <label for="projectStage">Project Stage:</label>
       <select id="projectStage" name="projectStage" required>
         <option value="deals">Deals</option>
-        <option value="Specified">Specified</option>
-        <option value="Quoted">Quoted</option>
-        <option value="Negotiation">Negotiation</option>
-        <option value="5 Yard Line">5 Yard Line</option>
-        <option value="Closed Won">Closed Won</option>
-        <option value="Closed Lost">Closed Lost</option>
+        <option value="specified">Specified</option>
+        <option value="quoted">Quoted</option>
+        <option value="negotiation">Negotiation</option>
+        <option value="yardline">5 Yard Line</option>
+        <option value="closedwon">Closed Won</option>
+        <option value="closedlost">Closed Lost</option>
       </select>
 
       <label>Products:</label>

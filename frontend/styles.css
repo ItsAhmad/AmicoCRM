@@ -188,6 +188,7 @@ div {
   width: 1200px; /* Set a fixed width if desired */
   margin: 50px 75px 400px 250px;
   font-family: Arial, sans-serif;
+  display: flex; 
 }
 
 /* Table styling */
@@ -207,15 +208,16 @@ div {
   border: 1px solid #e0e0e0;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 15px 20px;
+  padding: 15px 70px;
   text-align: center;
+  align-items: stretch;
 }
 
 .pipeline-header-label {
   font-weight: bold;
   color: #333333;
   flex: 1; /* Makes the label take equal space within the th */
-  text-align: center;
+  text-align: left;
 }
 
 .addProjectButton {
@@ -257,6 +259,7 @@ div {
   padding: 10px;
   margin: 10px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex; 
 }
 
 .deal-title {
@@ -269,3 +272,31 @@ div {
   font-size: 0.9em;
 }
 
+.pipeline-columns {
+  display: flex;
+  gap: 10px; /* Optional spacing between columns */
+}
+
+.group-column {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: stretch; /* Ensure full-width children */
+  width: 200px; /* Adjust column width as needed */
+  min-height: 600px;
+  border: 1px solid #ddd; /* Optional styling */
+  padding: 10px;
+}
+
+.group-column-list {
+  flex-grow: 1; /* Allow the list to grow inside the column */
+  display: flex;
+  flex-direction: column; /* Ensure cards stack vertically */
+  gap: 10px; /* Optional spacing between cards */
+}
+
+div.pipeline-view-container {
+  display: flex !important; /* Forces Flexbox to apply */
+  flex-wrap: wrap; /* Controls wrapping of columns */
+  justify-content: flex-start; /* Adjust alignment */
+  gap: 10px; /* Adds spacing between columns */
+}
