@@ -312,15 +312,7 @@ div {
   flex-grow: 1; /* Allow the list to grow inside the column */
   display: flex;
   flex-direction: column; /* Ensure cards stack vertically */
-}
-
-.group-column-list :empty::before {
-  content: "Drop cards here";
-  color: #ccc;
-  font-style: italic;
-  text-align: center;
-  display: block;
-  padding: 20px;
+  min-height: 600px;
 }
 
 div.pipeline-view-container {
