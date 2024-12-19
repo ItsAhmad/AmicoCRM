@@ -31,6 +31,7 @@
   display: flex;
   flex-direction: column;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
 }
 
 .nav-list {
@@ -83,6 +84,7 @@
   justify-content: center; 
   align-items: center;
   z-index: 1000;
+
 }
 
 /* Modal Content */
@@ -94,8 +96,9 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: top;
   max-height: 95%; /* Prevent overflowing screen */
-  margin: 50px 0 15px 0; 
+  margin: 0px 0 0px 250px; 
   overflow-y: scroll; /* Allow scrolling if content is long */
+  font-family: Arial, sans-serif;
 }
 
 .modal-content h2 {
@@ -215,7 +218,7 @@ div {
   text-align: center;
 }
 
-.create-button {
+.addProjectButton {
   background-color: #007bff;
   color: #ffffff;
   border: none;
@@ -230,7 +233,7 @@ div {
   transition: background-color 0.3s ease;
 }
 
-.create-button:hover {
+.addProjectButton:hover {
   background-color: #0056b3;
 }
 
@@ -243,3 +246,26 @@ div {
   font-size: 16px;
   color: #333;
 }
+
+
+
+/* DEAL CARD CSS */ 
+.deal-card {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.deal-title {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.deal-panel p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+

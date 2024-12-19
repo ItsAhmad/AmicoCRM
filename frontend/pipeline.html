@@ -32,20 +32,11 @@
         <table class="pipeline-headers">
           <thead>
             <tr class="pipeline-headers-row">
-              <th data-name="leads" class="stages-header">
+              <th data-name="deals" class="stages-header">
                 <div>
-                  <span class="pipeline-header-label">Leads</span>
-                  <a role="button" tabindex="0" title="Create" class="create-button"
-                  data-action="createInGroup" data-group="leads">
-                    <span class="fas fa-plus fa-sm"></span>
-                </a>
-                </div>
-              </th>
-              <th data-name="followup" class="stages-header">
-                <div>
-                  <span class="pipeline-header-label">Follow Up</span>
-                  <a role="button" tabindex="0" title="Create" class="create-button"
-                  data-action="createInGroup" data-group="leads">
+                  <span class="pipeline-header-label">Deals</span>
+                  <a role="button" tabindex="0" title="Create" class="addProjectButton"
+                  data-action="createInGroup" data-group="leads">+
                     <span class="fas fa-plus fa-sm"></span>
                 </a>
                 </div>
@@ -53,17 +44,17 @@
               <th data-name="specified" class="stages-header">
                 <div>
                   <span class="pipeline-header-label">Specified</span>
-                  <a role="button" tabindex="0" title="Create" class="create-button"
-                  data-action="createInGroup" data-group="leads">
+                  <a role="button" tabindex="0" title="Create" class="addProjectButton"
+                  data-action="createInGroup" data-group="leads">+
                     <span class="fas fa-plus fa-sm"></span>
                 </a>
                 </div>
               </th>
               <th data-name="quoted" class="stages-header">
                 <div>
-                  <span class="pipeline-header-label">Specified</span>
-                  <a role="button" tabindex="0" title="Create" class="create-button"
-                  data-action="createInGroup" data-group="quoted">
+                  <span class="pipeline-header-label">Quoted</span>
+                  <a role="button" tabindex="0" title="Create" class="addProjectButton"
+                  data-action="createInGroup" data-group="quoted">+
                     <span class="fas fa-plus fa-sm"></span>
                 </a>
                 </div>
@@ -71,8 +62,8 @@
               <th data-name="negotiation" class="stages-header">
                 <div>
                   <span class="pipeline-header-label">Negotiation</span>
-                  <a role="button" tabindex="0" title="Create" class="create-button"
-                  data-action="createInGroup" data-group="quoted">
+                  <a role="button" tabindex="0" title="Create" class="addProjectButton"
+                  data-action="createInGroup" data-group="quoted">+
                     <span class="fas fa-plus fa-sm"></span>
                 </a>
                 </div>
@@ -80,8 +71,8 @@
               <th data-name="yardline" class="stages-header">
                 <div>
                   <span class="pipeline-header-label">5 Yard Line</span>
-                  <a role="button" tabindex="0" title="Create" class="create-button"
-                  data-action="createInGroup" data-group="quoted">
+                  <a role="button" tabindex="0" title="Create" class="addProjectButton"
+                  data-action="createInGroup" data-group="quoted">+
                     <span class="fas fa-plus fa-sm"></span>
                 </a>
                 </div>
@@ -89,8 +80,8 @@
               <th data-name="closedwon" class="stages-header">
                 <div>
                   <span class="pipeline-header-label">Closed Won</span>
-                  <a role="button" tabindex="0" title="Create" class="create-button"
-                  data-action="createInGroup" data-group="quoted">
+                  <a role="button" tabindex="0" title="Create" class="addProjectButton"
+                  data-action="createInGroup" data-group="quoted">+
                     <span class="fas fa-plus fa-sm"></span>
                 </a>
                 </div>
@@ -98,14 +89,39 @@
               <th data-name="closedlost" class="stages-header">
                 <div>
                   <span class="pipeline-header-label">Closed Lost</span>
-                  <a role="button" tabindex="0" title="Create" class="create-button"
-                  data-action="createInGroup" data-group="quoted">
+                  <a role="button" tabindex="0" title="Create" class="addProjectButton"
+                  data-action="createInGroup" data-group="quoted">+
                     <span class="fas fa-plus fa-sm"></span>
-                </a>
+                  </a>
                 </div>
               </th>
             </tr>
           </thead>
+        </table>
+      </div>
+      <div class="pipeline-table-container">
+        <table class="pipeline-column-view" >
+          <tbody>
+            <tr class="pipeline-columns">
+              <td class="group-column" data-name="deals">
+                <div>
+                  <div class="group-column-list sortable" data-name="deals">
+                    <div class="column-list-item sortable" data-id="">
+                      <div class="deal-panel"></div>
+                    </div>
+                  </div>
+                  <div class ="show-more"></div>
+                </div>
+              </td>
+              <td class="group-column" data-name="deals"></td>
+              <td class="group-column" data-name="specified"></td>
+              <td class="group-column" data-name="quoted"></td>
+              <td class="group-column" data-name="negotiation"></td>
+              <td class="group-column" data-name="yardline"></td>
+              <td class="group-column" data-name="closedwon"></td>
+              <td class="group-column" data-name="closedlost"></td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -185,8 +201,7 @@
 
       <label for="projectStage">Project Stage:</label>
       <select id="projectStage" name="projectStage" required>
-        <option value="Leads">Leads</option>
-        <option value="Follow Up">Follow Up</option>
+        <option value="deals">Deals</option>
         <option value="Specified">Specified</option>
         <option value="Quoted">Quoted</option>
         <option value="Negotiation">Negotiation</option>

@@ -1,46 +1,61 @@
-// Get Elements
-const addProjectButton = document.getElementById("addProjectButton");
-const projectModal = document.getElementById("projectModal");
+// DOM Elements
+const modal = document.getElementById("projectModal");
 const closeButton = document.querySelector(".close-button");
-const projectForm = document.getElementById("projectForm");
+const form = document.getElementById("projectForm");
+const addProjectButtons = document.querySelectorAll(".addProjectButton");
 
-// Open Modal
-addProjectButton.addEventListener("click", () => {
-  projectModal.style.display = "flex";
+// Open Modal Functionality
+addProjectButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    modal.style.display = "block";
+  });
 });
 
-// Close Modal
+// Close Modal Functionality
 closeButton.addEventListener("click", () => {
-  projectModal.style.display = "none";
+  modal.style.display = "none";
+});
+
+// Close Modal on Outside Click
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
 });
 
 // Add Project to Pipeline
-document.getElementById("projectForm").addEventListener("submit", function (event) {
-  event.preventDefault();
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-  // Collect form data
+  // Get form data
   const projectName = document.getElementById("projectName").value;
-  const projectState = document.getElementById("projectState").value;
   const projectValue = document.getElementById("projectValue").value;
+  const projectState = document.getElementById("projectState").value;
   const projectStage = document.getElementById("projectStage").value;
 
-  // Create a project card
-  const projectCard = document.createElement("div");
-  projectCard.classList.add("project-card");
-  projectCard.innerHTML = `
-    <h3>${projectName}</h3>
-    <p>State: ${projectState}</p>
-    <p>Value: $${parseFloat(projectValue).toLocaleString()}</p>
-  `;
+  // Find the correct column
+  const column = document.querySelector(`.group-column[data-name="${projectStage}"]`);
 
-  // Append to the correct stage
-  const stageContent = document.querySelector(`#${projectStage.toLowerCase().replace(" ", "-")} .stage-content`);
-  if (stageContent) {
-    stageContent.appendChild(projectCard);
+  if (column) {
+    // Create the deal card element
+    const dealCard = document.createElement("div");
+    dealCard.classList.add("deal-card");
+    dealCard.innerHTML = `
+      <h3 class="deal-title">${projectName}</h3>
+      <p><strong>Value:</strong> $${projectValue}</p>
+      <p><strong>State:</strong> ${projectState}</p>
+    `;
+
+    // Append the deal card to the column's list
+    const cardList = column.querySelector(".group-column-list");
+    if (cardList) {
+      cardList.appendChild(dealCard);
+      modal.style.display = "none";
+      form.reset();
+    } else {
+      alert("Error: Could not find the card list container in the specified column.");
+    }
+  } else {
+    alert("Error: Could not find the specified column.");
   }
-
-  // Clear the form and close the modal
-  document.getElementById("projectForm").reset();
-  document.getElementById("projectModal").style.display = "none";
 });
-
