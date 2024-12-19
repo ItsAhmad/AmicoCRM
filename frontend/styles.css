@@ -314,9 +314,43 @@ div {
   flex-direction: column; /* Ensure cards stack vertically */
 }
 
+.group-column-list :empty::before {
+  content: "Drop cards here";
+  color: #ccc;
+  font-style: italic;
+  text-align: center;
+  display: block;
+  padding: 20px;
+}
+
 div.pipeline-view-container {
   display: flex; /* Forces Flexbox to apply */
   flex-wrap: wrap; /* Controls wrapping of columns */
   justify-content: flex-start; /* Adjust alignment */
 }
 
+/* ARE YOU RUSHING OR DRAGGING?? */ 
+.deal-card.dragging {
+  opacity: 0.5; /* Make dragged card semi-transparent */
+  border: 2px dashed #007bff; /* Highlight the border */
+}
+
+.group-column-list.drag-over {
+  background-color: #f0f8ff; /* Light blue background for drop zone */
+  border: 2px dashed #007bff; /* Dashed border for drop zone */
+}
+
+/* DELETING BUTTON */ 
+
+.delete-icon {
+  color: grey;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  float: right; /* Align to the right */
+  transition: color 0.3s ease;
+}
+
+.delete-icon:hover {
+  color: darkred;
+}
