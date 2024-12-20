@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: row; /* Ensure sidebar and main content are aligned horizontally */
+  }
+  
+  .sidebar {
+    width: 200px; /* Adjust width as needed */
+    background-color: #f4f4f4;
+    padding: 20px;
+    height: 100vh; /* Full-height sidebar */
+  }
+  
+  .box-widget {
+    flex: 1; /* Make it take up remaining space */
+    margin:  0 0 0 100px; 
+    display: flex;
+    justify-content: center; /* Center the iframe horizontally */
+    align-items: flex-start; /* Align iframe at the top of the container */
+  }
+  
+  iframe {
+    border: none; /* Remove default iframe border */
+    max-width: 100%; /* Make sure it fits within its container */
+    height: 550px; /* Maintain height */
+  }

@@ -399,3 +399,22 @@ textarea#newNote {
   margin: 0 1650px 0 0;
 }
 
+.container {
+  display: flex;
+  flex-direction: row; /* Ensure sidebar and main content are aligned horizontally */
+}
+
+.box-widget {
+  flex: 1; /* Make it take up remaining space */
+  margin:  30px 0px 0px 130px; /* N E S W */
+  display: flex;
+  justify-content: left; /* Center the iframe horizontally */
+  align-items: flex-start; /* Align iframe at the top of the container */
+}
+
+iframe {
+  border: none; /* Remove default iframe border */
+  max-width: 100%; /* Make sure it fits within its container */
+  height: 900px; /* Maintain height */
+  width: 1200px;
+}
