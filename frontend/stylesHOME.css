@@ -1,0 +1,420 @@
+/* Header with Logo */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #f4f4f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    z-index: 1000;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  /* Sidebar Navigation */
+  .sidebar {
+    position: fixed;
+    top: 60px; /* below header */
+    left: 0;
+    width: 150px;
+    height: calc(100vh - 60px);
+    background-color: #007BFF;
+    color: #ffffff;
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-item {
+    margin: 10px 0;
+  }
+  
+  .nav-item a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  .nav-item a:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  /* Button Styling */
+  .add-project-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .add-project-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Modal Overlay */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; 
+    justify-content: center; 
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    flex: flex; 
+    flex-direction: column;
+    background-color: #ffffff; 
+    padding: 40px;
+    border-radius: 20px;
+    width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    max-height: 95%; /* Prevent overflowing screen */
+    margin: 0px 0 0px 250px; 
+    overflow-y: scroll; 
+    overflow-x: scroll;
+    font-family: Arial, sans-serif;
+  }
+  
+  .modal-content h2 {
+    margin: 0 0 0 0; /* Top, right, bottom, left margins */
+    font-size: 1.5rem; /* Adjust font size for better appearance */
+  }
+  
+  .modal-content .exit-button {
+    margin: 0 450px 0px 0; /* Top, right, bottom, left margins */
+    font-size: 1.5rem; /* Adjust font size for better appearance */
+  }
+  
+  /* Close Button */
+  .close-button {
+    float: left;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #555555;
+    cursor: pointer;
+    margin: 0 0 0px 0;
+  }
+  
+  .close-button:hover {
+    color: #000000;
+  }
+  
+  /* Delete Button */
+  .delete-button {
+    float: left;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #555555;
+    cursor: pointer;
+    margin: 0 0 900px 0;
+  }
+  
+  .delete-button:hover {
+    color: #000000;
+  }
+  
+  /* Form Styling */
+  form {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 1em; /* Add space between form elements */
+    margin: 0px 0 0 0;
+  }
+  
+  label {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #333333;
+  }
+  
+  input,
+  select {
+    padding: 0.8em;
+    font-size: 0.9em;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  input[type="checkbox"] {
+    width: auto; /* Adjust for checkboxes */
+  }
+  
+  button[type="submit"] {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 0.8em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Products Checkbox Group */
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  
+  .project-wrapper {
+    padding: 0px;
+  }
+  
+  .pipeline-wrapper {
+    display: block;
+    justify-content: center; /* Centers content horizontally */
+    align-items: flex-start; /* Aligns to the top of the page */
+    height: 100vh; /* Full viewport height */
+    padding-top: 20px; /* Adds some space from the top */
+    box-sizing: border-box;
+  }
+  
+  /* Centered table container */
+  .pipeline-container {
+    max-width: 90%; /* Restricts width to keep it clean */
+    width: 1200px; /* Set a fixed width if desired */
+    margin: 50px 75px 400px 250px;
+    font-family: Arial, sans-serif;
+    display: flex; 
+  }
+  
+  /* Table styling */
+  .pipeline-headers {
+    width: 100%;
+    border-collapse: collapse; /* Prevents spacing issues */
+  }
+  
+  .pipeline-headers-row {
+    display: flex; /* Makes the row flex to allow horizontal layout */
+    justify-content: space-between; /* Adds space between columns */
+    gap: 30px; /* Spacing between stages */
+  }
+  
+  .stages-header {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 70px;
+    text-align: center;
+    align-items: stretch;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem; /* Adjust spacing between columns */
+  }
+  
+  .pipeline-header-label {
+    font-weight: bold;
+    color: #333333;
+    flex: 1; /* Makes the label take equal space within the th */
+    text-align: left;
+  }
+  
+  .addProjectButton {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .addProjectButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .fas.fa-plus.fa-sm {
+    font-size: 14px;
+  }
+  
+  .pipeline-header-label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  
+  
+  /* DEAL CARD CSS */
+  .deal-link {
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Ensures elements are stacked vertically */
+    padding: 10px; /* Add some padding around the content */
+    background-color: #f9f9f9; /* Light background for visibility */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    border-radius: 5px; /* Optional: Rounded corners */
+    margin-bottom: 10px; /* Space between cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Card shadow */
+  }
+  
+  .deal-link:hover {
+    background-color:#a4d4f7; 
+  }
+  
+  .deal-link {
+    margin: 0 0 10px 0; /* Adds space below the title */
+    font-size: 30px; /* Adjust title font size */
+    font-weight: bold; /* Make the title bold */
+  }
+  
+  .deal-link h3 {
+    font-size: 0.8em !important;
+    margin-bottom: 5px;
+    text-align: left;
+    margin: 0 0 10px 0; /* Adds space below the title */
+    font-size: 16px; /* Adjust title font size */
+    font-weight: bold; /* Make the title bold */
+  }
+  
+  .deal-link p {
+    margin: 0 0 0 0;
+    font-size: 0.5em;
+  }
+  
+  .deal-link p {
+    margin: 5px 0; /* Ensure consistent spacing for paragraphs */
+  }
+  
+  .pipeline-columns {
+    display: flex;
+    gap: 50px;
+  }
+  
+  .group-column {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: stretch; /* Ensure full-width children */
+    width: 200px; /* Adjust column width as needed */
+    min-height: 600px;
+    border: 1px solid #ddd; /* Optional styling */
+    padding: 9px;
+  }
+  
+  .group-column-list {
+    flex-grow: 1; /* Allow the list to grow inside the column */
+    display: flex;
+    flex-direction: column; /* Ensure cards stack vertically */
+    min-height: 600px;
+  }
+  
+  div.pipeline-view-container {
+    display: flex; /* Forces Flexbox to apply */
+    flex-wrap: wrap; /* Controls wrapping of columns */
+    justify-content: flex-start; /* Adjust alignment */
+  }
+  
+  /* ARE YOU RUSHING OR DRAGGING?? */ 
+  .deal-card.dragging {
+    opacity: 0.5; /* Make dragged card semi-transparent */
+    border: 2px dashed #007bff; /* Highlight the border */
+  }
+  
+  .group-column-list.drag-over {
+    background-color: #f0f8ff; /* Light blue background for drop zone */
+    border: 2px dashed #007bff; /* Dashed border for drop zone */
+  }
+  
+  /* DELETING BUTTON */ 
+  .delete-icon {
+    color: grey;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    float: right; /* Align to the right */
+    transition: color 0.3s ease;
+  }
+  
+  .delete-icon:hover {
+    color: darkred;
+  }
+  
+  #dealNotes {
+    margin-top: 10px;
+  }
+  
+  #dealNotes div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  textarea#newNote {
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  #searchContainer {
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  #searchBox {
+    width: 100%; /* Adjust width as needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 1650px 0 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row; /* Ensure sidebar and main content are aligned horizontally */
+  }
+  
+  .box-widget {
+    flex: 1; /* Make it take up remaining space */
+    margin:  30px 0px 0px 130px; /* N E S W */
+    display: flex;
+    justify-content: left; /* Center the iframe horizontally */
+    align-items: flex-start; /* Align iframe at the top of the container */
+  }
+  
+  iframe {
+    border: none; /* Remove default iframe border */
+    max-width: 100%; /* Make sure it fits within its container */
+    height: 900px; /* Maintain height */
+    width: 1200px;
+  }
