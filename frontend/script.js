@@ -55,10 +55,13 @@ form.addEventListener("submit", (e) => {
     dealCard.setAttribute("draggable", "true");
     dealCard.dataset.id = generateUniqueId();
     dealCard.innerHTML = `
-      <h3 class="deal-title">${projectName}</h3>
-      <p><strong>Value:</strong> $${projectValue}</p>
-      <p><strong>State:</strong> ${projectState}</p>
-      <i class="fas fa-trash-alt delete-icon"></i>
+      <a href="#" class="deal-link" data-id="${dealCard.dataset.id}"> 
+        <span href="#" class="deal-link" data-id="${dealCard.dataset.id}"</span>
+        <span class="exit-button">&times;</span>
+        <h3 class="deal-title">${projectName}</h3>
+        <p><strong>Value:</strong> $${projectValue}</p>
+        <p><strong>State:</strong> ${projectState}</p>
+      </a>
     `;
 
     // Add drag event listeners to the new deal card
@@ -71,8 +74,12 @@ form.addEventListener("submit", (e) => {
       dealCard.classList.remove("dragging"); // Remove visual feedback
     });
 
-    const deleteIcon = dealCard.querySelector(".delete-icon");
-    deleteIcon.addEventListener("click", () => deleteDealCard(dealCard));
+    const deleteIcon = dealCard.querySelector(".exit-button");
+    if (deleteIcon) {
+      deleteIcon.addEventListener("click", () => deleteDealCard(dealCard));
+    } else {
+      console.warn("Exit button not found in deal card.");
+    }
 
   // Append the new deal card to the column
     column.appendChild(dealCard);
@@ -132,3 +139,89 @@ groupColumns.forEach((column) => {
     column.classList.remove('drag-over'); // Remove visual feedback
   });
 });
+
+// Get modal and close button
+const dealModal = document.getElementById("dealModal");
+const exitButton = dealModal.querySelector(".exit-button");
+
+// Open modal when a deal is clicked
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("deal-link")) {
+    e.preventDefault();
+    const dealId = e.target.dataset.id;
+
+    // Fetch and populate the deal details (replace with actual logic to fetch data)
+    const dealData = fetchDealData(dealId); // Replace with your data fetching logic
+    populateModal(dealData);
+
+    // Show the modal
+    dealModal.style.display = "block";
+  }
+});
+
+// Close modal
+exitButton.addEventListener("click", () => {
+  dealModal.style.display = "none";
+});
+
+// Example function to fetch deal data
+function fetchDealData(dealId) {
+  // Replace this with logic to fetch data from the server or state
+  return {
+    title: "Sample Deal",
+    user: "John Doe",
+    stage: "Negotiation",
+    amount: "5000",
+    contacts: [
+      { name: "Jane Smith", email: "jane@example.com", phone: "123-456-7890" }
+    ],
+    products: [
+      { name: "Product A", quantity: 2, unitPrice: 1000, total: 2000 },
+      { name: "Product B", quantity: 3, unitPrice: 1000, total: 3000 }
+    ],
+    notes: [
+      { timestamp: "2024-12-19 10:00", content: "Initial discussion." },
+      { timestamp: "2024-12-19 11:00", content: "Sent follow-up email." }
+    ]
+  };
+}
+
+// Populate modal with deal data
+function populateModal(deal) {
+  document.getElementById("dealTitle").textContent = deal.title;
+  document.getElementById("dealUser").textContent = deal.user;
+  document.getElementById("dealStage").textContent = deal.stage;
+  document.getElementById("dealAmount").textContent = deal.amount;
+
+  // Populate contacts
+  const contactsList = document.getElementById("dealContacts");
+  contactsList.innerHTML = "";
+  deal.contacts.forEach((contact) => {
+    const li = document.createElement("li");
+    li.textContent = `${contact.name} (${contact.email}, ${contact.phone})`;
+    contactsList.appendChild(li);
+  });
+
+  // Populate products
+  const productsTable = document.getElementById("dealProducts");
+  productsTable.innerHTML = "";
+  deal.products.forEach((product) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${product.name}</td>
+      <td>${product.quantity}</td>
+      <td>${product.unitPrice}</td>
+      <td>${product.total}</td>
+    `;
+    productsTable.appendChild(row);
+  });
+
+  // Populate notes
+  const notesSection = document.getElementById("dealNotes");
+  notesSection.innerHTML = "";
+  deal.notes.forEach((note) => {
+    const noteDiv = document.createElement("div");
+    noteDiv.innerHTML = `<span>${note.timestamp}</span> - ${note.content}`;
+    notesSection.appendChild(noteDiv);
+  });
+}

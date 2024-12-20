@@ -172,7 +172,39 @@
 </div>
     
 
-<!-- Modal to add project -->
+<!-- Modal to view deal -->
+<div id="dealModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="exit-button">&times;</span>
+    <h2 id="dealTitle"></h2>
+    <p><strong>Assigned User:</strong> <span id="dealUser"></span> <i class="fa fa-pencil edit-icon"></i></p>
+    <p><strong>Stage:</strong> <span id="dealStage"></span></p>
+    <p><strong>Amount:</strong> $<span id="dealAmount"></span></p>
+    <h3>Contacts</h3>
+    <ul id="dealContacts"></ul>
+    <h3>Products</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="dealProducts"></tbody>
+    </table>
+    <h3>Notes</h3>
+    <div id="dealNotes"></div>
+    <textarea id="newNote" placeholder="Add a note..."></textarea>
+    <button id="addNoteButton">Add Note</button>
+    <h3>Files</h3>
+    <input type="file" id="uploadFiles" multiple>
+    <button id="uploadFilesButton">Upload</button>
+  </div>
+</div>
+
+<!-- Modal to view deal -->
 <div id="projectModal" class="modal">
   <div class="modal-content">
     <span class="close-button">&times;</span>

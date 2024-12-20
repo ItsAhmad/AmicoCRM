@@ -1,4 +1,3 @@
-
 /* Header with Logo */
 .header {
   position: fixed;
@@ -23,7 +22,7 @@
   position: fixed;
   top: 60px; /* below header */
   left: 0;
-  width: 200px;
+  width: 150px;
   height: calc(100vh - 60px);
   background-color: #007BFF;
   color: #ffffff;
@@ -117,6 +116,20 @@
 }
 
 .close-button:hover {
+  color: #000000;
+}
+
+/* Delete Button */
+.delete-button {
+  float: left;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #555555;
+  cursor: pointer;
+  margin: 0 0 900px 0;
+}
+
+.delete-button:hover {
   color: #000000;
 }
 
@@ -254,7 +267,7 @@ div {
 
 
 /* DEAL CARD CSS */
-.deal-card {
+.deal-link {
   display: flex; /* Enables flexbox layout */
   flex-direction: column; /* Ensures elements are stacked vertically */
   padding: 10px; /* Add some padding around the content */
@@ -265,18 +278,18 @@ div {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Card shadow */
 }
 
-.deal-card:hover {
+.deal-link:hover {
   background-color:#a4d4f7; 
 }
 
-.deal-title {
+.deal-link {
   margin: 0 0 10px 0; /* Adds space below the title */
-  font-size: 16px; /* Adjust title font size */
+  font-size: 30px; /* Adjust title font size */
   font-weight: bold; /* Make the title bold */
 }
 
-.deal-title h3 {
-  font-size: 1.2em !important;
+.deal-link h3 {
+  font-size: 0.8em !important;
   margin-bottom: 5px;
   text-align: left;
   margin: 0 0 10px 0; /* Adds space below the title */
@@ -284,12 +297,12 @@ div {
   font-weight: bold; /* Make the title bold */
 }
 
-.deal-panel p {
+.deal-link p {
   margin: 0 0 0 0;
   font-size: 0.5em;
 }
 
-.deal-card p {
+.deal-link p {
   margin: 5px 0; /* Ensure consistent spacing for paragraphs */
 }
 
@@ -333,7 +346,6 @@ div.pipeline-view-container {
 }
 
 /* DELETING BUTTON */ 
-
 .delete-icon {
   color: grey;
   font-size: 16px;
