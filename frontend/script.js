@@ -61,7 +61,7 @@ form.addEventListener("submit", (e) => {
         <h3 class="deal-title">${projectName}</h3>
         <p><strong>Value:</strong> $${projectValue}</p>
         <p><strong>State:</strong> ${projectState}</p>
-      </a>
+      <a>  
     `;
 
     // Add drag event listeners to the new deal card
