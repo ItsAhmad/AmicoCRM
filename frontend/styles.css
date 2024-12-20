@@ -83,25 +83,32 @@
   justify-content: center; 
   align-items: center;
   z-index: 1000;
-
 }
 
 /* Modal Content */
 .modal-content {
+  flex: flex; 
+  flex-direction: column;
   background-color: #ffffff; 
   padding: 40px;
   border-radius: 20px;
   width: 600px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: top;
+  text-align: left;
   max-height: 95%; /* Prevent overflowing screen */
   margin: 0px 0 0px 250px; 
-  overflow-y: scroll; /* Allow scrolling if content is long */
+  overflow-y: scroll; 
+  overflow-x: scroll;
   font-family: Arial, sans-serif;
 }
 
 .modal-content h2 {
-  margin: 0 50px 900px 0; /* Top, right, bottom, left margins */
+  margin: 0 0 0 0; /* Top, right, bottom, left margins */
+  font-size: 1.5rem; /* Adjust font size for better appearance */
+}
+
+.modal-content .exit-button {
+  margin: 0 450px 0px 0; /* Top, right, bottom, left margins */
   font-size: 1.5rem; /* Adjust font size for better appearance */
 }
 
@@ -358,3 +365,37 @@ div.pipeline-view-container {
 .delete-icon:hover {
   color: darkred;
 }
+
+#dealNotes {
+  margin-top: 10px;
+}
+
+#dealNotes div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+textarea#newNote {
+  width: 100%;
+  height: 80px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+#searchContainer {
+  margin: 20px auto;
+  text-align: center;
+}
+
+#searchBox {
+  width: 100%; /* Adjust width as needed */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 1650px 0 0;
+}
+

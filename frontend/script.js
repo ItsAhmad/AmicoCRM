@@ -225,3 +225,28 @@ function populateModal(deal) {
     notesSection.appendChild(noteDiv);
   });
 }
+
+// SEARCH FUNCTION 
+document.getElementById("searchBox").addEventListener("input", function (e) {
+  const searchTerm = e.target.value.toLowerCase();
+
+  // Get all deal modals (or the data sources if not all modals are open)
+  const deals = document.querySelectorAll(".deal-card");
+
+  deals.forEach(deal => {
+    const title = deal.querySelector(".deal-title")?.textContent.toLowerCase() || "";
+    const contacts = deal.dataset.contacts?.toLowerCase() || ""; // Assuming contacts are stored in dataset
+    const notes = deal.dataset.notes?.toLowerCase() || ""; // Assuming notes are stored in dataset
+    const files = deal.dataset.files?.toLowerCase() || ""; // Assuming files are stored in dataset
+
+    // Combine searchable content
+    const combinedContent = `${title} ${contacts} ${notes} ${files}`;
+
+    // Show or hide deals based on the search term
+    if (combinedContent.includes(searchTerm)) {
+      deal.style.display = "block"; // Show matching deal
+    } else {
+      deal.style.display = "none"; // Hide non-matching deal
+    }
+  });
+});
