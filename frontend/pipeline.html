@@ -6,6 +6,9 @@
   <title>Amico CRM - Pipeline</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -215,11 +218,20 @@
 </div>
 
 <!-- Modal to ADD DEAL -->
-<!--if deal moves to quoted, then add deal value -->
+<!--if deal moves to quoted, then add deal value + Quantities -->
 <div id="projectModal" class="modal">
   <div class="modal-content">
     <span class="close-button">&times;</span>
     <form id="projectForm">
+
+      <label for="lead-source">Lead Source:</label>
+      <select id="lead-source" class="lead_source" multiple>
+        <option value="agency">Agency</option>
+        <option value="hospital">Hospital</option>
+        <option value="amico">Amico Internal</option>
+        <option value="distributor">Distributor</option>
+      </select>
+
       <label for="projectName">Project / Hospital Name:</label>
       <input type="text" id="projectName" name="projectName" required>
 
@@ -236,86 +248,37 @@
         <option value="closedwon">Closed Won</option>
         <option value="closedlost">Closed Lost</option>
       </select>
+
+
       <div class="PRODUCT-CHECKLIST">
-      <label>Products:</label>
-      <div>
-        <input type="checkbox" id="Mira90" name="products" value="Mira 90">
-        <label for="Mira90">Mira 90</label>
+      <label for="dealProducts">Products:</label>
+      <select id="dealProducts" class="dealProducts" multiple>
+        <optgroup label="Architectural">
+          <option value="SolarEclipse">Solar Eclipse</option>
+          <option value="SolarSeries">Solar Series</option>
+          <option value="SolarDuoMed">Solar Duo Med</option>
+          <option value="Skyline">Skyline</option>
+          <option value="Lunar">Lunar</option>
+          <option value="SolarSurgical">Solar Surgical</option>
+          <option value="MRI">MRI</option>
+          <option value="Cleanroom">Cleanroom</option>
+          <option value="Lightmaster">Lightmaster</option>
+          <option value="Linea">Linea</option>
+          <option value="Leo">Leo</option>
+          <option value="CUSTOM">CUSTOM</option>
+        </optgroup>
+        <optgroup label="Medical">
+          <option value="Mira90">Mira 90</option>
+          <option value="Mira65">Mira 65</option>
+          <option value="Mira50">Mira 50</option>
+          <option value="Vega80">Vega 80</option>
+          <option value="Nova">Nova</option>
+          <option value="Gamma">Gamma</option>
+          <option value="Clarity">Clarity</option>
+        </optgroup>
+      </select>
       </div>
-      <div>
-        <input type="checkbox" id="Mira65" name="products" value="Mira 65">
-        <label for="Mira65">Mira 65</label>
-      </div>
-      <div>
-        <input type="checkbox" id="Mira50" name="products" value="Mira 50">
-        <label for="Mira50">Mira 50</label>
-      </div>
-      <div>
-        <input type="checkbox" id="Vega80" name="products" value="Vega 80">
-        <label for="Vega80">Vega 80</label>
-      </div>
-      <div>
-        <input type="checkbox" id="Nova" name="products" value="Nova">
-        <label for="Nova">Nova</label>
-      </div>
-      <div>
-        <input type="checkbox" id="SolarEclipse" name="products" value="Solar Eclipse">
-        <label for="SolarEclipse">Solar Eclipse</label>
-      </div>
-      <div>
-        <input type="checkbox" id="SolarSeries" name="products" value="Solar Series">
-        <label for="SolarSeries">Solar Series</label>
-      </div>
-      <div>
-        <input type="checkbox" id="SolarDuoMed" name="products" value="Solar Duo Med">
-        <label for="SolarDuoMed">Solar Duo Med</label>
-      </div>
-      <div>
-        <input type="checkbox" id="Skyline" name="products" value="Skyline">
-        <label for="Skyline">Skyline</label>
-      </div>
-      <div>
-        <input type="checkbox" id="Lunar" name="products" value="Lunar">
-        <label for="Lunar">Lunar</label>
-      </div>
-      <div>
-        <input type="checkbox" id="SolarSurgical" name="products" value="Solar Surgical">
-        <label for="SolarSurgical">Solar Surgical</label>
-      </div>
-      <div>
-        <input type="checkbox" id="MRI" name="products" value="MRI">
-        <label for="MRI">MRI</label>
-      </div>
-      <div>
-        <input type="checkbox" id="Cleanroom" name="products" value="Cleanroom">
-        <label for="Cleanroom">Cleanroom</label>
-      </div>
-      <div>
-        <input type="checkbox" id="Gamma" name="products" value="Gamma">
-        <label for="Gamma">Gamma</label>
-      </div>
-      <div>
-        <input type="checkbox" id="Clarity" name="products" value="Clarity">
-        <label for="Clarity">Clarity</label>
-      </div>
-      <div>
-        <input type="checkbox" id="Lightmaster" name="products" value="Lightmaster">
-        <label for="Lightmaster">Lightmaster</label>
-      </div>
-      <div>
-        <input type="checkbox" id="Linea" name="products" value="Linea">
-        <label for="Linea">Linea</label>
-      </div>
-      <div>
-        <input type="checkbox" id="Leo" name="products" value="Leo">
-        <label for="Leo">Leo</label>
-      </div>
-      <div>
-        <input type="checkbox" id="CUSTOM" name="products" value="CUSTOM">
-        <label for="CUSTOM">CUSTOM</label>
-      </div>
-    </div>
-    
+
       <label for="contactFirstName">Contact First Name:</label>
       <input type="text" id="contactFirstName" name="contactFirstName" required>
 
@@ -335,5 +298,28 @@
     </main>
   </div>
   <script src="script.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#lead-source').chosen({
+        width: '300px', // Set the width of the dropdown
+        placeholder_text_multiple: 'Select Lead Source',
+      });
+
+      $('#projectStage').chosen({
+        width: '300px', 
+        placeholder_text: 'Select Deal Stage',
+        disable_search: true
+      });
+    });
+  </script>
+
+  <script>
+   $(document).ready(function() { 
+    $('#dealProducts').chosen({
+        width: '300px',
+        placeholder_text_multiple: 'Select Products'
+      });
+   });   
+  </script>
 </body>
 </html>

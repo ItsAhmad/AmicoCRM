@@ -23,6 +23,14 @@ addProjectButtons.forEach(button => {
   });
 });
 
+/*const leadsource = getElementById("lead-source")
+
+leadsource.addEventListener("click", () => {
+  if (value="agency") {
+    display
+  }
+}); */ 
+
 // Close Modal Functionality
 closeButton.addEventListener("click", () => {
   modal.style.display = "none";
@@ -35,6 +43,7 @@ window.addEventListener("click", (event) => {
   }
 });
 
+
 // Add Project to Pipeline
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -42,7 +51,6 @@ form.addEventListener("submit", (e) => {
   // Get form data
   const projectName = document.getElementById("projectName").value;
   const projectValue = document.getElementById("projectValue").value;
-  const projectState = document.getElementById("projectState").value;
   const projectStage = document.getElementById("projectStage").value;
 
   // Find the correct column
@@ -60,7 +68,6 @@ form.addEventListener("submit", (e) => {
         <span class="exit-button">&times;</span>
         <h3 class="deal-title">${projectName}</h3>
         <p><strong>Value:</strong> $${projectValue}</p>
-        <p><strong>State:</strong> ${projectState}</p>
       <a>  
     `;
 
@@ -84,6 +91,10 @@ form.addEventListener("submit", (e) => {
   // Append the new deal card to the column
     column.appendChild(dealCard);
 
+    /* if (column = "Quoted"){ 
+      const projectState = document.getElementById("projectState").value;
+    }*/ 
+
     // Append the deal card to the column's list
     const cardList = column.querySelector(".group-column-list");
     if (cardList) {
@@ -102,7 +113,6 @@ form.addEventListener("submit", (e) => {
 //Dragging Functionality 
 // Select all group columns
 const groupColumns = document.querySelectorAll('.group-column-list');
-console.log("Group Columns:", groupColumns);
 
 // Add dragover and drop events to group columns
 groupColumns.forEach((column) => {
