@@ -87,12 +87,10 @@
 
 /* Modal Content */
 .modal-content {
-  flex: flex; 
-  flex-direction: column;
   background-color: #ffffff; 
   padding: 40px;
   border-radius: 20px;
-  width: 600px;
+  width: 650px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: left;
   max-height: 95%; /* Prevent overflowing screen */
@@ -114,16 +112,15 @@
 
 /* Close Button */
 .close-button {
-  float: left;
   font-size: 1.5em;
   font-weight: bold;
   color: #555555;
   cursor: pointer;
-  margin: 0 0 0px 0;
+  margin: 0px 50px 750px 0px;
 }
 
 .close-button:hover {
-  color: #000000;
+  color: #da1313;
 }
 
 /* Delete Button */
@@ -160,7 +157,7 @@ select {
   font-size: 0.9em;
   border: 1px solid #cccccc;
   border-radius: 5px;
-  width: 100%;
+  width: 40%;
   box-sizing: border-box;
 }
 
