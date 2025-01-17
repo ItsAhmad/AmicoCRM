@@ -235,6 +235,12 @@
       <label for="projectName">Project / Hospital Name:</label>
       <input type="text" id="projectName" name="projectName" required>
 
+      <label for="EstimatedPO">Estimated PO Date:</label>
+      <input type="date" id="estimatedPO" name="estimatedPO" required>
+
+      <label for="EstimatedShip">Estimated Ship:</label>
+      <input type="date" id="estimatedship" name="estimatedship" required>
+
       <label for="projectValue">Project Value:</label>
       <input type="number" id="projectValue" name="projectValue" required>
 
@@ -249,10 +255,8 @@
         <option value="closedlost">Closed Lost</option>
       </select>
 
-
-      <div class="PRODUCT-CHECKLIST">
-      <label for="dealProducts">Products:</label>
-      <select id="dealProducts" class="dealProducts" multiple>
+      <label for="product-list">Products:</label>
+      <select id="product-list" name="product-list" multiple>
         <optgroup label="Architectural">
           <option value="SolarEclipse">Solar Eclipse</option>
           <option value="SolarSeries">Solar Series</option>
@@ -277,25 +281,13 @@
           <option value="Clarity">Clarity</option>
         </optgroup>
       </select>
-      </div>
-
-      <label for="contactFirstName">Contact First Name:</label>
-      <input type="text" id="contactFirstName" name="contactFirstName" required>
-
-      <label for="contactLastName">Contact Last Name:</label>
-      <input type="text" id="contactLastName" name="contactLastName" required>
-
-      <label for="contactPhone">Phone Number:</label>
-      <input type="tel" id="contactPhone" name="contactPhone" required>
-
-      <label for="contactEmail">Email:</label>
-      <input type="email" id="contactEmail" name="contactEmail" required>
 
       <button type="submit">Add to Pipeline</button>
     </form>
   </div>
   </div>
     </main>
+  
   </div>
   <script src="script.js"></script>
   <script>
@@ -310,16 +302,12 @@
         placeholder_text: 'Select Deal Stage',
         disable_search: true
       });
-    });
-  </script>
 
-  <script>
-   $(document).ready(function() { 
-    $('#dealProducts').chosen({
+      $('#product-list').chosen({
         width: '300px',
-        placeholder_text_multiple: 'Select Products'
+        placeholder_text: 'Select Products'
       });
-   });   
+    });
   </script>
 </body>
 </html>
