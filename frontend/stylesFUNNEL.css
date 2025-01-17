@@ -1,0 +1,59 @@
+/* Funnel container styling */
+.funnel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 300px;
+    margin: 20px;
+  }
+  
+  /* Funnel bar styling */
+  .funnel-bar {
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  /* Different stages with distinct colors */
+  .discussion {
+    background-color: #4caf50; /* Green */
+  }
+  
+  .specified {
+    background-color: #2196f3; /* Blue */
+  }
+  
+  .quoted {
+    background-color: #ff9800; /* Orange */
+  }
+  
+  .five-yard-line {
+    background-color: #f44336; /* Red */
+  }
+  
+  /* Tooltip styling */
+  .tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    display: none;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  
+  /* On hover, grow the bar */
+  .funnel-bar:hover {
+    transform: scale(1.05);
+  }
+  
