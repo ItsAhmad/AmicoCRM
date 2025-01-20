@@ -256,11 +256,13 @@
         </select>
       </div>
 
-      <label for="EstimatedPO">Estimated PO Date:</label>
+      <label for="estimatedPO">Estimated PO Date:</label>
       <input type="date" id="estimatedPO" name="estimatedPO" required>
 
-      <label for="EstimatedShip">Estimated Ship:</label>
-      <input type="date" id="estimatedship" name="estimatedship" required>
+      <label for="estimatedShip">Estimated Ship:</label>
+      <input type="date" id="estimatedShip" name="estimatedShip" required>
+
+      <div id="error-message" style="display: none; color: red;">Error: PO date cannot be after the shipping date.</div>
 
       <label for="projectValue">Project Value:</label>
       <input type="number" id="projectValue" name="projectValue" required>
@@ -350,6 +352,27 @@
         placeholder_text: 'Select Products'
       });
     });
+
+
+    $('#estimatedShip').on('change', function () {
+        const shippingDate = new Date($(this).val());
+        const poDate = new Date($('#estimatedPO').val());
+
+        if (poDate > shippingDate) {
+          $('#error-message').text('Ship date cannot be BEFORE PO date.').show();
+        } else {
+          $('#error-message').hide();
+        }
+      
+        /* if (isNaN(shippingDate.getTime())){
+          $('#error-message').text('Please select a shipping date').show();
+        } else if (poDate > shippingDate) {
+          $('#error-message').text('PO date cannot be after shipping date').show();
+        } else {
+          $('#error-message').hide();
+        } */ 
+
+      });
   </script>
 </body>
 </html>
