@@ -3,6 +3,9 @@ const modal = document.getElementById("projectModal");
 const closeButton = document.querySelector(".close-button");
 const form = document.getElementById("projectForm");
 const addProjectButtons = document.querySelectorAll(".addProjectButton");
+const leadSource = document.getElementById("lead-source");
+const hospitalNameContainer = document.getElementById("hospitalNameContainer")
+
 
 // Function to generate unique IDs 
 function generateUniqueId() {
@@ -30,6 +33,16 @@ leadsource.addEventListener("click", () => {
     display
   }
 }); */ 
+
+
+  // Add event listener to the lead source dropdown
+leadSource.addEventListener("change", () => {
+  if (leadSource.value === "Hospital") {
+    hospitalNameContainer.style.display = "block"; // Show hospital name input
+  } else {
+    hospitalNameContainer.style.display = "none"; // Hide hospital name input
+  }
+  });
 
 // Close Modal Functionality
 closeButton.addEventListener("click", () => {

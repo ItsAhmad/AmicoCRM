@@ -227,10 +227,15 @@
       <label for="lead-source">Lead Source:</label>
       <select id="lead-source" class="lead_source" multiple>
         <option value="agency">Agency</option>
-        <option value="hospital">Hospital</option>
+        <option value="Hospital">Hospital</option>
         <option value="amico">Amico Internal</option>
         <option value="distributor">Distributor</option>
       </select>
+
+      <div id="hospitalNameContainer" style="display: none;">
+        <label for="hospitalName">Hospital Name:</label>
+        <input type="text" id="hospitalName" name="hospitalName" placeholder="Enter Hospital Name">
+      </div>
 
       <label for="projectName">Project / Hospital Name:</label>
       <input type="text" id="projectName" name="projectName" required>
@@ -296,6 +301,16 @@
         width: '300px', // Set the width of the dropdown
         placeholder_text_multiple: 'Select Lead Source',
       });
+
+      $('#lead-source').on('change', function () {
+    const selectedValues = $(this).val(); // Get selected values
+
+    if (selectedValues.includes("Hospital")) {
+      $('#hospitalNameContainer').show(); // Show hospital name input
+    } else {
+      $('#hospitalNameContainer').hide(); // Hide hospital name input
+    }
+  });
 
       $('#projectStage').chosen({
         width: '300px', 

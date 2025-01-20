@@ -3,45 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <h3>Amico CRM - Funnel</h3>
-  <link rel="stylesheet" href="stylesFUNNEL.css">
+  <title>Sales Funnel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .funnel-container {
+      width: 300px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .funnel-bar {
+      position: relative;
+      margin: 10px auto;
+      color: white;
+      font-size: 14px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .tooltip {
+      visibility: hidden;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      padding: 5px 10px;
+      border-radius: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .funnel-bar:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="funnel-container">
-        <div class="funnel-bar discussion" data-tooltip="Projects: 10, Total Value: $50,000"></div>
-        <div class="funnel-bar specified" data-tooltip="Projects: 8, Total Value: $40,000"></div>
-        <div class="funnel-bar quoted" data-tooltip="Projects: 5, Total Value: $25,000"></div>
-        <div class="funnel-bar five-yard-line" data-tooltip="Projects: 3, Total Value: $15,000"></div>
-      </div>
-      <div class="tooltip" id="tooltip"></div>      
+  <h1>Sales Funnel</h1>
+  <div class="funnel-container" id="funnelContainer"></div>
+  <script src="script.js"></script>
 </body>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const funnelBars = document.querySelectorAll(".funnel-bar");
-    const tooltip = document.getElementById("tooltip");
-  
-    funnelBars.forEach((bar) => {
-      bar.addEventListener("mouseover", (e) => {
-        const tooltipText = bar.getAttribute("data-tooltip");
-        tooltip.innerText = tooltipText;
-        tooltip.style.display = "block";
-        tooltip.style.left = `${e.pageX + 10}px`;
-        tooltip.style.top = `${e.pageY + 10}px`;
-        tooltip.style.opacity = "1";
-      });
-  
-      bar.addEventListener("mousemove", (e) => {
-        tooltip.style.left = `${e.pageX + 10}px`;
-        tooltip.style.top = `${e.pageY + 10}px`;
-      });
-  
-      bar.addEventListener("mouseleave", () => {
-        tooltip.style.opacity = "0";
-        tooltip.style.display = "none";
-      });
-    });
-  });
-</script>
 </html>
