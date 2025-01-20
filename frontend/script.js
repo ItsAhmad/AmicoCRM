@@ -32,17 +32,8 @@ leadsource.addEventListener("click", () => {
   if (value="agency") {
     display
   }
-}); */ 
+}); */
 
-
-  // Add event listener to the lead source dropdown
-leadSource.addEventListener("change", () => {
-  if (leadSource.value === "Hospital") {
-    hospitalNameContainer.style.display = "block"; // Show hospital name input
-  } else {
-    hospitalNameContainer.style.display = "none"; // Hide hospital name input
-  }
-  });
 
 // Close Modal Functionality
 closeButton.addEventListener("click", () => {

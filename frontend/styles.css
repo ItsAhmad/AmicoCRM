@@ -419,6 +419,29 @@ iframe {
 }
 
 #hospitalNameContainer {
-  margin-top: 10px;
+  margin: 10px 0px 0px 0px; 
   transition: all 0.3s ease;
 }
+
+input#hospitalName {
+  width: 70%;
+  transition: all 0.5s ease;
+}
+
+input#agencyName {
+  width:70%;
+  transition: all 0.5s ease;
+}
+
+input#distributorName {
+  width:70%;
+  margin: 0px 45px 0px 0px;
+  transition: all 0.5s ease;
+}
+
+select#leadWebsiteName {
+  width:70%;
+  margin: 0px 75px 0px 0px;
+  transition: all 0.5s ease;
+}
+

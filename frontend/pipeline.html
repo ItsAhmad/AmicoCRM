@@ -226,10 +226,11 @@
 
       <label for="lead-source">Lead Source:</label>
       <select id="lead-source" class="lead_source" multiple>
-        <option value="agency">Agency</option>
+        <option value="Agency">Agency</option>
         <option value="Hospital">Hospital</option>
-        <option value="amico">Amico Internal</option>
-        <option value="distributor">Distributor</option>
+        <option value="Amico">Amico Internal</option>
+        <option value="Distributor">Distributor</option>
+        <option value="lead-website">Lead Website</option>
       </select>
 
       <div id="hospitalNameContainer" style="display: none;">
@@ -237,8 +238,23 @@
         <input type="text" id="hospitalName" name="hospitalName" placeholder="Enter Hospital Name">
       </div>
 
-      <label for="projectName">Project / Hospital Name:</label>
-      <input type="text" id="projectName" name="projectName" required>
+      <div id="agencyNameContainer" style="display: none;">
+        <label for="agencyName">Agency Name:</label>
+        <input type="text" id="agencyName" name="agencyName" placeholder="Enter Agency Name">
+      </div>
+
+      <div id="distributorNameContainer" style="display: none;">
+        <label for="distrubtorName">Distributor Name:</label>
+        <input type="text" id="distributorName" name="distrubitorName" placeholder="Enter Distributor Name">
+      </div>
+
+      <div id="leadWebsiteName" style="display: none;">
+        <label for="leadWebsiteName">Lead Website Name:</label>
+        <select id="leadWebsiteName" class="leadWebsiteName">
+          <option value="construction-wire">Construction Wire</option>
+          <option value="construct-connect">Construct Connect</option>
+        </select>
+      </div>
 
       <label for="EstimatedPO">Estimated PO Date:</label>
       <input type="date" id="estimatedPO" name="estimatedPO" required>
@@ -305,10 +321,21 @@
       $('#lead-source').on('change', function () {
     const selectedValues = $(this).val(); // Get selected values
 
-    if (selectedValues.includes("Hospital")) {
-      $('#hospitalNameContainer').show(); // Show hospital name input
+    if (selectedValues.includes("Agency")) {
+      $('#agencyNameContainer').show(); // Show hospital name input
+    } else if (selectedValues.includes("Hospital")) {
+      $('#hospitalNameContainer').show(); 
+    } else if (selectedValues.includes("Amico")) {
+      $('#hospitalNameContainer').show();
+    } else if (selectedValues.includes("Distributor")) {
+      $('#distributorNameContainer').show();
+    } else if (selectedValues.includes("lead-website")) {
+      $('#leadWebsiteName').show();
     } else {
-      $('#hospitalNameContainer').hide(); // Hide hospital name input
+      $('#agencyNameContainer').hide();
+      $('#hospitalNameContainer').hide();
+      $('#distributorNameContainer').hide();
+      $('#leadWebsiteName').hide();
     }
   });
 
