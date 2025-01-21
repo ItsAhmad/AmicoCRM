@@ -2,39 +2,15 @@
 .funnel-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 300px;
     margin: 100px 0px 0px 275px;
   }
-  
-  /* Funnel bar styling
-  .funnel-bar {
-    width: 100%;
-    height: 40px;
-    margin: 10px 0;
-    position: relative;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  Different stages with distinct colors. 
-  .discussion {
-    background-color: #4caf50; 
-  }
-  
-  .specified {
-    background-color: #2196f3; 
-  }
-  
-  .quoted {
-    background-color: #ff9800; 
-  }
-  
-  .five-yard-line {
-    background-color: #f44336; 
-  }
-  */
+
+.funnel-container #text {
+  display: top;
+}
+
   
   /* Tooltip styling */
   .tooltip {
@@ -60,20 +36,27 @@
 
   body {
     font-family: Arial, sans-serif;
-    text-align: top;
   }
 
   .funnel-rectangle {
-    position: relative;
     color: white;
     font-size: 14px;
-    text-align: top;
     cursor: pointer;
-    width: 100px;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 50px solid green;
-    margin: 0;
+    border-top: 50px solid rgb(166, 213, 166);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .funnel-text {
+    color: white; /* Text color */
+    font-size: 16px; /* Font size */
+    position: center; /* Position inside the bar */
+    top: 0%; /* Center vertically */
+    left: 25%; /* Center horizontally */
+    pointer-events: none; /* Prevent text from interfering with hover effects */
   }
 
   .tooltip {

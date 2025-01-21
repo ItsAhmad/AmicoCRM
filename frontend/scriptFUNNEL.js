@@ -18,11 +18,16 @@ data.forEach((item, index) => {
   /* bar.style.backgroundColor = `hsl(${240 - index * 60}, 70%, 50%)`; */
   bar.style.borderRadius = '5px';
 
+  const text = document.createElement('span');
+  text.className = 'funnel-text';
+  text.textContent = item.stage;
+
   const tooltip = document.createElement('div');
   tooltip.className = 'tooltip';
   tooltip.textContent = `${item.stage}: ${item.count}`;
 
-  bar.textContent = item.stage;
+
+  bar.appendChild(text);
   bar.appendChild(tooltip);
 
   funnelContainer.appendChild(bar);
