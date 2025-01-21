@@ -47,13 +47,28 @@ window.addEventListener("click", (event) => {
   }
 });
 
-
 // Add Project to Pipeline
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   // Get form data
-  const projectName = document.getElementById("hospitalName").value;
+  let projectName = ""; 
+
+  if ($('#agencyNameContainer').is(':visible') && $('#agencyName').val().trim() !== "") {
+    projectName = document.getElementById("agencyName").value;
+    console.log("Agency Name", projectName);
+  } else if ($('#hospitalNameContainer').is(':visible') && $('#hospitalName').val().trim() !== "") {
+    projectName = document.getElementById("hospitalName").value;
+    console.log("Hospital Name", projectName);
+  } else if ($('#distributorNameContainer').is(':visible') && $('#distributorName').val().trim() !== "") {
+    projectName = document.getElementById("distributorName").value;
+    console.log("Distributor", projectName);
+  } else if ($('#leadWebsiteName').is(':visible') && $('#leadWebsiteName').val().trim() !== "") {
+    projectName = document.getElementById("leadWebsiteName").value;
+    console.log("Lead Website Name", projectName);
+  }
+
+
   const projectValue = document.getElementById("projectValue").value;
   const projectStage = document.getElementById("projectStage").value;
 
