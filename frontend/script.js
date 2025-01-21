@@ -56,16 +56,16 @@ form.addEventListener("submit", (e) => {
 
   if ($('#agencyNameContainer').is(':visible') && $('#agencyName').val().trim() !== "") {
     projectName = document.getElementById("agencyName").value;
-    console.log("Agency Name", projectName);
+    console.log("Agency Name:", projectName);
   } else if ($('#hospitalNameContainer').is(':visible') && $('#hospitalName').val().trim() !== "") {
     projectName = document.getElementById("hospitalName").value;
-    console.log("Hospital Name", projectName);
+    console.log("Hospital Name:", projectName);
   } else if ($('#distributorNameContainer').is(':visible') && $('#distributorName').val().trim() !== "") {
     projectName = document.getElementById("distributorName").value;
-    console.log("Distributor", projectName);
+    console.log("Distributor:", projectName);
   } else if ($('#leadWebsiteName').is(':visible') && $('#leadWebsiteName').val().trim() !== "") {
     projectName = document.getElementById("leadWebsiteName").value;
-    console.log("Lead Website Name", projectName);
+    console.log("Lead Website Name:", projectName);
   }
 
 

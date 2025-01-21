@@ -233,11 +233,6 @@
         <option value="lead-website">Lead Website</option>
       </select>
 
-      <div id="hospitalNameContainer" style="display: none;">
-        <label for="hospitalName">Hospital Name:</label>
-        <input type="text" id="hospitalName" name="hospitalName" placeholder="Enter Hospital Name">
-      </div>
-
       <div id="agencyNameContainer" style="display: none;">
         <label for="agencyName">Agency Name:</label>
         <input type="text" id="agencyName" name="agencyName" placeholder="Enter Agency Name">
@@ -254,6 +249,11 @@
           <option value="construction-wire">Construction Wire</option>
           <option value="construct-connect">Construct Connect</option>
         </select>
+      </div>
+
+      <div id="hospitalNameContainer">
+        <label for="hospitalName">Hospital Name:</label>
+        <input type="text" id="hospitalName" name="hospitalName" placeholder="Enter Hospital Name">
       </div>
 
       <label for="estimatedPO">Estimated PO Date:</label>
@@ -327,15 +327,12 @@
       $('#agencyNameContainer').show(); // Show hospital name input
     } else if (selectedValues.includes("Hospital")) {
       $('#hospitalNameContainer').show(); 
-    } else if (selectedValues.includes("Amico")) {
-      $('#hospitalNameContainer').show();
     } else if (selectedValues.includes("Distributor")) {
       $('#distributorNameContainer').show();
     } else if (selectedValues.includes("lead-website")) {
       $('#leadWebsiteName').show();
     } else {
       $('#agencyNameContainer').hide();
-      $('#hospitalNameContainer').hide();
       $('#distributorNameContainer').hide();
       $('#leadWebsiteName').hide();
     }
