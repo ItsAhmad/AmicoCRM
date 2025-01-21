@@ -227,7 +227,7 @@ div {
   border: 1px solid #e0e0e0;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 15px 70px;
+  padding: 20px 20px 20px 120px;
   text-align: center;
   align-items: stretch;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -262,12 +262,6 @@ div {
 
 .fas.fa-plus.fa-sm {
   font-size: 14px;
-}
-
-.pipeline-header-label {
-  font-weight: bold;
-  font-size: 16px;
-  color: #333;
 }
 
 
@@ -321,7 +315,7 @@ div {
   display: flex;
   flex-direction: column; /* Stack items vertically */
   align-items: stretch; /* Ensure full-width children */
-  width: 200px; /* Adjust column width as needed */
+  width: 13rem; /* Adjust column width as needed */
   min-height: 600px;
   border: 1px solid #ddd; /* Optional styling */
   padding: 9px;
