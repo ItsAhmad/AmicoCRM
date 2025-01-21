@@ -68,7 +68,7 @@ form.addEventListener("submit", (e) => {
     console.log("Lead Website Name:", projectName);
   }
 
-
+  const hospitalName = document.getElementById("hospitalName").value;
   const projectValue = document.getElementById("projectValue").value;
   const projectStage = document.getElementById("projectStage").value;
 
@@ -85,7 +85,7 @@ form.addEventListener("submit", (e) => {
       <a href="#" class="deal-link" data-id="${dealCard.dataset.id}"> 
         <span href="#" class="deal-link" data-id="${dealCard.dataset.id}"</span>
         <span class="exit-button">&times;</span>
-        <h3 class="deal-title">${projectName}</h3>
+        <h3 class="deal-title">${hospitalName}</h3>
         <p><strong>Value:</strong> $${projectValue}</p>
       <a>  
     `;
