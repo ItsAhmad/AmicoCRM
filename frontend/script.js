@@ -53,7 +53,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   // Get form data
-  const projectName = document.getElementById("projectName").value;
+  const projectName = document.getElementById("hospitalName").value;
   const projectValue = document.getElementById("projectValue").value;
   const projectStage = document.getElementById("projectStage").value;
 
