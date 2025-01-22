@@ -203,23 +203,23 @@ div {
 
 /* Centered table container */
 .pipeline-container {
-  max-width: 90%; /* Restricts width to keep it clean */
-  width: 1200px; /* Set a fixed width if desired */
-  margin: 50px 75px 400px 250px;
-  font-family: Arial, sans-serif;
-  display: flex; 
+  display: flex;
+  gap: 20px; /* Space between columns */
+  padding: 20px;
+  overflow-x: auto; /* Allows horizontal scrolling for many columns */
+  background-color: #f9f9f9;
 }
 
 /* Table styling */
-.pipeline-headers {
-  width: 100%;
-  border-collapse: collapse; /* Prevents spacing issues */
-}
-
 .pipeline-headers-row {
-  display: flex; /* Makes the row flex to allow horizontal layout */
-  justify-content: space-between; /* Adds space between columns */
-  gap: 30px; /* Spacing between stages */
+  width: 270px; /* Fixed width for header */
+  height: 28px; /* Fixed height for header */
+  background-color: #007bff; /* Blue header background */
+  color: #ffffff; /* White text */
+  text-align: center;
+  line-height: 28px; /* Center the text vertically */
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
 }
 
 .stages-header {
@@ -329,9 +329,25 @@ div {
 }
 
 div.pipeline-view-container {
-  display: flex; /* Forces Flexbox to apply */
-  flex-wrap: wrap; /* Controls wrapping of columns */
-  justify-content: flex-start; /* Adjust alignment */
+  width: 2700px; /* Matches the header width */
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures the content doesn't overflow the column boundaries */
+}
+
+div.pipeline-view-contained {
+  width: 2700px; /* Matches the header width */
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures the content doesn't overflow the column boundaries */
 }
 
 /* ARE YOU RUSHING OR DRAGGING?? */ 
