@@ -2,7 +2,11 @@
 const modal = document.getElementById("projectModal");
 const closeButton = document.querySelector(".close-button");
 const form = document.getElementById("projectForm");
-const addProjectButtons = document.querySelectorAll(".addProjectButton");
+const addProjectButtonDeals = document.querySelectorAll(".addProjectButton-deals");
+const addProjectButtonSpecified = document.querySelectorAll(".addProjectButton-specified");
+const addProjectButtonQuoted = document.querySelectorAll(".addProjectButton-quoted");
+const addProjectButtonNegotiation = document.querySelectorAll(".addProjectButton-negotiation");
+const addProjectButton5YardLine = document.querySelectorAll(".addProjectButton-5yardline");
 const leadSource = document.getElementById("lead-source");
 const hospitalNameContainer = document.getElementById("hospitalNameContainer")
 
@@ -20,20 +24,35 @@ function deleteDealCard(dealCard) {
 }
 
 // Open Modal Functionality
-addProjectButtons.forEach(button => {
+addProjectButtonDeals.forEach(button => {
   button.addEventListener("click", () => {
     modal.style.display = "block";
   });
 });
 
-/*const leadsource = getElementById("lead-source")
+addProjectButtonSpecified.forEach(button => {
+  button.addEventListener("click", () => {
+    modal.style.display = "block";
+  });
+});
 
-leadsource.addEventListener("click", () => {
-  if (value="agency") {
-    display
-  }
-}); */
+addProjectButtonQuoted.forEach(button => {
+  button.addEventListener("click", () => {
+    modal.style.display = "block";
+  });
+});
 
+addProjectButtonNegotiation.forEach(button => {
+  button.addEventListener("click", () => {
+    modal.style.display = "block";
+  });
+});
+
+addProjectButton5YardLine.forEach(button => {
+  button.addEventListener("click", () => {
+    modal.style.display = "block";
+  });
+});
 
 // Close Modal Functionality
 closeButton.addEventListener("click", () => {
@@ -70,103 +89,111 @@ form.addEventListener("submit", (e) => {
 
   const hospitalName = document.getElementById("hospitalName").value;
   const projectValue = document.getElementById("projectValue").value;
-  const projectStage = document.getElementById("projectStage").value;
+  const projectStage = document.getElementById("projectStage").value.trim();
+
+  console.log("Selected Project Stage:", projectStage); // Debugging
 
   // Find the correct column
-  const column = document.querySelector(`.group-column[data-name="${projectStage}"]`);
+  const stageToColumnClass = {
+    "Deals": "kanban-column-deals",
+    "Specified": "kanban-column-specified",
+    "Quoted": "kanban-column-quoted",
+    "Negotiation": "kanban-column-negotiation",
+    "5 Yard Line": "kanban-column-5yardline"
+  };
+
+  const columnClass = stageToColumnClass[projectStage];
+  const column = document.querySelector(`.${columnClass} .kanban-cards`);
+
+  if (!columnClass) {
+    alert(`Error: Invalid project stage "${projectStage}".`);
+    return;
+  }
+
+  console.log("Mapped Column Class:", columnClass); // Debugging
 
   if (column) {
     // Create the deal card element
     const dealCard = document.createElement("div");
-    dealCard.classList.add("deal-card");
+    dealCard.classList.add("kanban-card", "deal-card");
     dealCard.setAttribute("draggable", "true");
     dealCard.dataset.id = generateUniqueId();
     dealCard.innerHTML = `
-      <a href="#" class="deal-link" data-id="${dealCard.dataset.id}"> 
-        <span href="#" class="deal-link" data-id="${dealCard.dataset.id}"</span>
-        <span class="exit-button">&times;</span>
-        <h3 class="deal-title">${hospitalName}</h3>
-        <p><strong>Value:</strong> $${projectValue}</p>
-      <a>  
+        <div class="deal-header">
+      <div class="dropdown">
+        <button class="dropdown-button">⋮</button>
+        <div class="dropdown-menu">
+        <button class="dropdown-item view-modal">View Modal</button>
+        <button class="dropdown-item delete-deal">Delete Deal</button>
+        </div>
+      </div>
+      <h3 class="deal-title">${hospitalName}</h3>
+      </div>
+    <p><strong>Value:</strong> $${projectValue}</p>
     `;
+
+    const dropdownButton = dealCard.querySelector(".dropdown-button");
+    const dropdownMenu = dealCard.querySelector(".dropdown-menu");
+
+    dropdownButton.addEventListener("click", (e) => {
+      e.stopPropagation(); // Prevent clicks from bubbling up
+      dropdownMenu.classList.toggle("show"); // Toggle menu visibility
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener("click", () => dropdownMenu.classList.remove("show"));
 
     // Add drag event listeners to the new deal card
     dealCard.addEventListener("dragstart", (e) => {
       e.dataTransfer.setData("text/plain", dealCard.dataset.id || ""); 
-      dealCard.classList.add("dragging"); // Add visual feedback
+      dealCard.classList.add("dragging");
     });
 
     dealCard.addEventListener("dragend", () => {
-      dealCard.classList.remove("dragging"); // Remove visual feedback
+      dealCard.classList.remove("dragging");
     });
 
-    const deleteIcon = dealCard.querySelector(".exit-button");
-    if (deleteIcon) {
-      deleteIcon.addEventListener("click", () => deleteDealCard(dealCard));
-    } else {
-      console.warn("Exit button not found in deal card.");
-    }
+    const deleteDealButton = dealCard.querySelector(".delete-deal");
+    deleteDealButton.addEventListener("click", () => deleteDealCard(dealCard));
 
-  // Append the new deal card to the column
-    column.appendChild(dealCard);
-
-    /* if (column = "Quoted"){ 
-      const projectState = document.getElementById("projectState").value;
-    }*/ 
-
-    // Append the deal card to the column's list
-    const cardList = column.querySelector(".group-column-list");
-    if (cardList) {
-      cardList.prepend(dealCard);
-      modal.style.display = "none";
-      form.reset();
-    } else {
-      alert("Error: Could not find the card list container in the specified column.");
-    }
-    } else {
-    alert("Error: Could not find the specified column.");
+    // Append the new deal card to the column's list
+    column.prepend(dealCard);
+    modal.style.display = "none";
+    form.reset();
+  } else {
+    alert(`Error: Could not find the specified column for "${projectStage}".`);
   }
 });
 
 
 //Dragging Functionality 
 // Select all group columns
-const groupColumns = document.querySelectorAll('.group-column-list');
+const kanbanColumns = document.querySelectorAll('.kanban-cards');
 
 // Add dragover and drop events to group columns
-groupColumns.forEach((column) => {
+kanbanColumns.forEach((column) => {
   column.addEventListener('dragover', (e) => {
-    e.preventDefault(); // Allow dropping
-    column.classList.add('drag-over'); // Add visual feedback for drop zone
+    e.preventDefault();
+    column.classList.add('drag-over');
   });
 
   column.addEventListener('dragleave', () => {
-    column.classList.remove('drag-over'); // Remove visual feedback
+    column.classList.remove('dragover'); //remove visual feedback
   });
 
   column.addEventListener('drop', (e) => {
     e.preventDefault();
-    const cardId = e.dataTransfer.getData('text/plain'); // Get the dragged card's ID
-    const draggedCard = document.querySelector(`.deal-card[data-id="${cardId}"]`);
-
-    // Find the card list inside the column
-    let cardList = column.querySelector(".group-column-list");
-
-    // If no card list exists, create one dynamically
-    if (!cardList) {
-      cardList = document.createElement("div");
-      cardList.classList.add("group-column-list", "sortable");
-      cardList.dataset.name = column.dataset.name;
-      column.appendChild(cardList);
-      console.warn("Card list not found; dynamically created a new one.");
-    }
+    const cardId = e.dataTransfer.getData('text/plain');
+    const draggedCard = document.querySelector(`.deal-card[data-id="${cardId}]`);
 
     if (draggedCard) {
-      cardList.appendChild(draggedCard);
+      column.appendChild(draggedCard);
+    } else {
+      console.warn("Dragged card not found");
     }
 
-    column.classList.remove('drag-over'); // Remove visual feedback
-  });
+    column.classList.remove('drag-over'); //remove visual feedback
+  }); 
 });
 
 // Get modal and close button
@@ -175,7 +202,7 @@ const exitButton = dealModal.querySelector(".exit-button");
 
 // Open modal when a deal is clicked
 document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("deal-link")) {
+  if (e.target.classList.contains("view-modal")) {
     e.preventDefault();
     const dealId = e.target.dataset.id;
 

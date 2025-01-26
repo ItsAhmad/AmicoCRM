@@ -28,159 +28,72 @@
       </ul>
     </nav>
   </div>
-  
-  <div class="pipeline-wrapper">
-    <div class="pipeline-container" data-scope="Opportunity" style="min-width: 1100px">
-      <div class="pipeline-view-container">
-        <div id="searchContainer">
-          <input 
-            type="text" 
-            id="searchBox" 
-            placeholder="Search" 
-          />
-        </div>
-        <div class="pipeline-view-contained">
-        <table class="pipeline-headers">
-          <thead>
-            <tr class="pipeline-headers-row">
-              <th data-name="deals" class="stages-header">
-                <div>
-                  <span class="pipeline-header-label">Deals</span>
-                  <a role="button" tabindex="0" title="Create" class="addProjectButton"
-                  data-action="createInGroup" data-group="leads">
-                      <span class="fas fa-plus fa-sm"></span>
-                  </a>
-                </div>
-              </th>
-              <th data-name="specified" class="stages-header">
-                <div>
-                  <span class="pipeline-header-label">Specified</span>
-                  <a role="button" tabindex="0" title="Create" class="addProjectButton"
-                  data-action="createInGroup" data-group="leads">
-                      <span class="fas fa-plus fa-sm"></span>
-                  </a>
-                </div>
-              </th>
-              <th data-name="quoted" class="stages-header">
-                <div>
-                  <span class="pipeline-header-label">Quoted</span>
-                  <a role="button" tabindex="0" title="Create" class="addProjectButton"
-                  data-action="createInGroup" data-group="quoted">
-                      <span class="fas fa-plus fa-sm"></span>
-                  </a>
-                </div>
-              </th>
-              <th data-name="negotiation" class="stages-header">
-                <div>
-                  <span class="pipeline-header-label">Negotiation</span>
-                  <a role="button" tabindex="0" title="Create" class="addProjectButton"
-                  data-action="createInGroup" data-group="quoted">
-                      <span class="fas fa-plus fa-sm"></span>
-                  </a>
-                </div>
-              </th>
-              <th data-name="yardline" class="stages-header">
-                <div>
-                  <span class="pipeline-header-label">5 Yard Line</span>
-                  <a role="button" tabindex="0" title="Create" class="addProjectButton"
-                  data-action="createInGroup" data-group="quoted">
-                      <span class="fas fa-plus fa-sm"></span>
-                  </a>
-                </div>
-              </th>
-              <th data-name="closedwon" class="stages-header">
-                <div>
-                  <span class="pipeline-header-label">Closed Won</span>
-                  <a role="button" tabindex="0" title="Create" class="addProjectButton"
-                  data-action="createInGroup" data-group="quoted">
-                      <span class="fas fa-plus fa-sm"></span>
-                 </a>
-                </div>
-              </th>
-              <th data-name="closedlost" class="stages-header">
-                <div>
-                  <span class="pipeline-header-label">Closed Lost</span>
-                  <a role="button" tabindex="0" title="Create" class="addProjectButton"
-                  data-action="createInGroup" data-group="quoted">
-                      <span class="fas fa-plus fa-sm"></span>
-                    </a>
-                </div>
-              </th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-
-
-      <div class="pipeline-table-container">
-        <table class="pipeline-column-view" >
-          <tbody>
-            <tr class="pipeline-columns">
-              <td class="group-column" data-name="deals">
-                <div>
-                    <div class="group-column-list sortable" data-name="deals">
-                      <div class="column-list-item sortable" data-id="">
-                      </div>
-                  </div>
-                  <div class ="show-more"></div>
-                </div>
-              </td>
-              <td class="group-column" data-name="specified">
-                <div>
-                  <div class="group-column-list sortable" data-name="specified">
-                    <div class="column-list-item sortable" data-id="">
-                    </div>
-                </div>
-              </div>
-              </td>
-              <td class="group-column" data-name="quoted">
-                <div>
-                  <div class="group-column-list sortable" data-name="quoted">
-                    <div class="column-list-item sortable" data-id="">
-                    </div>
-                </div>
-              </div>
-              </td>
-              <td class="group-column" data-name="negotiation">
-                <div>
-                  <div class="group-column-list sortable" data-name="negotiation">
-                    <div class="column-list-item sortable" data-id="">
-                    </div>
-                </div>
-              </div>
-              </td>
-              <td class="group-column" data-name="yardline">
-                <div>
-                  <div class="group-column-list sortable" data-name="yardline">
-                    <div class="column-list-item sortable" data-id="">
-                    </div>
-                </div>
-              </div>
-              </td>
-              <td class="group-column" data-name="closedwon">
-                <div>
-                  <div class="group-column-list sortable" data-name="closedwon">
-                    <div class="column-list-item sortable" data-id="">
-                    </div>
-                </div>
-              </div>
-              </td>
-              <td class="group-column" data-name="closedlost">
-                <div>
-                  <div class="group-column-list sortable" data-name="closedlost">
-                    <div class="column-list-item sortable" data-id="">
-                    </div>
-                </div>
-              </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>  
 </div>
     
+
+<div class="kanban-container"> 
+  <div class="kanban-board">
+    <div class="kanban-column-deals">
+      <div class="kanban-header">Deals
+      <a role="button" tabindex="0" title="Create" class="addProjectButton-deals"
+        data-action="createInGroup" data-group="deals">
+            <span class="fas fa-plus fa-sm"></span>
+      </a>
+      </div>
+      <div class="kanban-cards">
+        <div class="kanban-card">Task 1</div>
+        <div class="kanban-card">Task 2</div>
+      </div>
+    </div>
+    <div class="kanban-column-specified">
+      <div class="kanban-header">Specified
+        <a role="button" tabindex="0" title="Create" class="addProjectButton-specified"
+          data-action="createInGroup" data-group="specified">
+              <span class="fas fa-plus fa-sm"></span>
+        </a>
+      </div>
+      <div class="kanban-cards">
+        <div class="kanban-card">Task 3</div>
+        <div class="kanban-card">Task 4</div>
+      </div>
+    </div>
+    <div class="kanban-column-quoted">
+      <div class="kanban-header">Quoted
+        <a role="button" tabindex="0" title="Create" class="addProjectButton-quoted"
+          data-action="createInGroup" data-group="quoted">
+              <span class="fas fa-plus fa-sm"></span>
+        </a>
+      </div>
+      <div class="kanban-cards">
+        <div class="kanban-card">Task 3</div>
+        <div class="kanban-card">Task 4</div>
+      </div>
+    </div>
+    <div class="kanban-column-negotiation">
+      <div class="kanban-header">Negotiation
+        <a role="button" tabindex="0" title="Create" class="addProjectButton-negotiation"
+          data-action="createInGroup" data-group="negotiation">
+              <span class="fas fa-plus fa-sm"></span>
+        </a>
+      </div>
+      <div class="kanban-cards">
+        <div class="kanban-card">Task 3</div>
+        <div class="kanban-card">Task 4</div>
+      </div>
+    </div>
+    <div class="kanban-column-5yardline">
+      <div class="kanban-header">5 Yard Line
+        <a role="button" tabindex="0" title="Create" class="addProjectButton-5yardline"
+          data-action="createInGroup" data-group="5yardline">
+              <span class="fas fa-plus fa-sm"></span>
+        </a>
+      </div>
+      <div class="kanban-cards">
+        <div class="kanban-card">Task 5</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal to view deal -->
 <div id="dealModal" class="dealModal" style="display: none;">
@@ -269,11 +182,11 @@
 
       <label for="projectStage">Project Stage:</label>
       <select id="projectStage" name="projectStage" required>
-        <option value="deals">Deals</option>
-        <option value="specified">Specified</option>
-        <option value="quoted">Quoted</option>
-        <option value="negotiation">Negotiation</option>
-        <option value="yardline">5 Yard Line</option>
+        <option value="Deals">Deals</option>
+        <option value="Specified">Specified</option>
+        <option value="Quoted">Quoted</option>
+        <option value="Negotiation">Negotiation</option>
+        <option value="5 Yard Line">5 Yard Line</option>
         <option value="closedwon">Closed Won</option>
         <option value="closedlost">Closed Lost</option>
       </select>
