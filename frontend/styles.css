@@ -100,13 +100,8 @@
   font-family: Arial, sans-serif;
 }
 
-.modal-content h2 {
-  margin: 0 0 0 0; /* Top, right, bottom, left margins */
-  font-size: 1.5rem; /* Adjust font size for better appearance */
-}
-
 .exit-button {
-  margin: 0px 0px 0px 80px; /* N E S W */ 
+  margin: 0px 0px 0px 0px; /* N E S W */ 
   font-size: 1.0rem; /* Adjust font size for better appearance */
 }
 
@@ -123,18 +118,20 @@
   color: #da1313;
 }
 
-/* Delete Button */
-.delete-button {
-  float: left;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #555555;
-  cursor: pointer;
-  margin: 0 0 900px 0;
+/* ------------------------------------------VIEWING DEAL MODAL STYLES---------------------*/
+
+.modal-content h2 {
+  margin: 15px 0 0 0; /* Top, right, bottom, left margins */
+  font-size: 1.5rem; /* Adjust font size for better appearance */
 }
 
-.delete-button:hover {
-  color: #000000;
+.deal-table {
+  padding: 10px 0px 0px 0px; 
+  width: 100%;
+}
+
+textarea#newNote{
+  width: 90%
 }
 
 /* Form Styling */
@@ -188,7 +185,7 @@ button[type="submit"]:hover {
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin: 0px 0px 0px 110px;
+  margin: 0px 0px 0px 10px;
 }
 
 .addProjectButton-specified {
@@ -198,7 +195,7 @@ button[type="submit"]:hover {
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin: 0px 0px 0px 88px;
+  margin: 0px 0px 0px 10px;
 }
 
 .addProjectButton-quoted {
@@ -208,7 +205,7 @@ button[type="submit"]:hover {
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin: 0px 0px 0px 100px;
+  margin: 0px 0px 0px 10px;
 }
 
 .addProjectButton-negotiation {
@@ -218,7 +215,7 @@ button[type="submit"]:hover {
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin: 0px 0px 0px 80px;
+  margin: 0px 0px 0px 10px;
 }
 
 .addProjectButton-5yardline {
@@ -228,7 +225,7 @@ button[type="submit"]:hover {
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin: 0px 0px 0px 80px;
+  margin: 0px 0px 0px 10px;
 }
 
 .addProjectButton:hover {
@@ -318,7 +315,7 @@ button[type="submit"]:hover {
 }
 
 textarea#newNote {
-  width: 100%;
+  width: 90%;
   height: 80px;
   margin-top: 10px;
   padding: 10px;
@@ -538,3 +535,4 @@ select#leadWebsiteName {
 .dropdown-item:hover {
   background-color: #f0f0f0;
 }
+

@@ -117,7 +117,6 @@ form.addEventListener("submit", (e) => {
     const dealCard = document.createElement("div");
     dealCard.classList.add("kanban-card", "deal-card");
     dealCard.setAttribute("draggable", "true");
-    dealCard.setAttribute("ondrop", "drop(event)")
     dealCard.dataset.id = generateUniqueId();
     dealCard.innerHTML = `
         <div class="deal-header">
@@ -230,7 +229,7 @@ function fetchDealData(dealId) {
   return {
     title: "Sample Deal",
     user: "John Doe",
-    stage: "Negotiation",
+    stage: "",
     amount: "5000",
     contacts: [
       { name: "Jane Smith", email: "jane@example.com", phone: "123-456-7890" }
