@@ -117,6 +117,7 @@ form.addEventListener("submit", (e) => {
     const dealCard = document.createElement("div");
     dealCard.classList.add("kanban-card", "deal-card");
     dealCard.setAttribute("draggable", "true");
+    dealCard.setAttribute("ondrop", "drop(event)")
     dealCard.dataset.id = generateUniqueId();
     dealCard.innerHTML = `
         <div class="deal-header">
@@ -149,8 +150,37 @@ form.addEventListener("submit", (e) => {
       dealCard.classList.add("dragging");
     });
 
-    dealCard.addEventListener("dragend", () => {
-      dealCard.classList.remove("dragging");
+    const kanbanColumns = document.querySelectorAll('.kanban-cards');
+    const column = document.querySelector(`.${columnClass} .kanban-cards`);
+
+    kanbanColumns.forEach((column) => {
+      column.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        column.classList.add('drag-over');
+      });
+    
+      column.addEventListener('dragleave', () => {
+        column.classList.remove('dragover'); //remove visual feedback
+      });
+    
+      column.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const cardId = e.dataTransfer.getData('text/plain');
+        const draggedCard = document.querySelector(`.deal-card[data-id="${cardId}"]`);
+
+        if (draggedCard) {
+          column.appendChild(draggedCard);
+
+        dealCard.addEventListener("dragend", () => {
+          dealCard.classList.remove("dragging");
+        });
+    
+        } else {
+          console.error("Dragged card not found");
+        }
+    
+        column.classList.remove('drag-over'); //remove visual feedback
+      }); 
     });
 
     const deleteDealButton = dealCard.querySelector(".delete-deal");
@@ -167,34 +197,8 @@ form.addEventListener("submit", (e) => {
 
 
 //Dragging Functionality 
-// Select all group columns
-const kanbanColumns = document.querySelectorAll('.kanban-cards');
 
 // Add dragover and drop events to group columns
-kanbanColumns.forEach((column) => {
-  column.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    column.classList.add('drag-over');
-  });
-
-  column.addEventListener('dragleave', () => {
-    column.classList.remove('dragover'); //remove visual feedback
-  });
-
-  column.addEventListener('drop', (e) => {
-    e.preventDefault();
-    const cardId = e.dataTransfer.getData('text/plain');
-    const draggedCard = document.querySelector(`.deal-card[data-id="${cardId}]`);
-
-    if (draggedCard) {
-      column.appendChild(draggedCard);
-    } else {
-      console.warn("Dragged card not found");
-    }
-
-    column.classList.remove('drag-over'); //remove visual feedback
-  }); 
-});
 
 // Get modal and close button
 const dealModal = document.getElementById("dealModal");
