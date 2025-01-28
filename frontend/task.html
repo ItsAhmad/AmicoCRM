@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amico CRM - Pipeline</title>
+  <title>Task Manager</title>
   <link rel="stylesheet" href="stylesTASK.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -11,4 +11,35 @@
 </head>
 
 <body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+          <img src="https://www.amico.com/_next/image?url=%2Flogos%2Famico-logo.png&w=256&q=75" alt="Amico Logo" class="logo">
+        </header>
+    
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#home">Home</a></li>
+            <li class="nav-item"><a href="#pipeline" class="active">Pipeline</a></li>
+            <li class="nav-item"><a href="#analytics">Analytics - Spire</a></li>
+            <li class="nav-item"><a href="#tasks">Tasks</a></li>
+            <li class="nav-item"><a href="#knowledge-base">Knowledge Base</a></li>
+          </ul>
+        </nav>
+    </div>
+
+    <div class="task-input-container">
+        <div class="task-input-header">Add Task</div>
+        <form class="task-input-form" id="task-form">
+            <input type="text" class="task-input" id="task-input" placeholder="What do you need to do?">
+            <div class="task-action-bar">
+                <button type="button" class="add-task-btn" id="add-task-btn">Add Task</button>
+            </div>
+        </form>
+    <div class="task-list" id="task-list"></div>
+
+
+<script src="scriptTASK.js"></script>
 </body>
+</html>
