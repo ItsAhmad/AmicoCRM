@@ -27,10 +27,12 @@
             taskNameElement.className = 'task-name';
             taskNameElement.textContent = taskName;
 
-            const taskDeleteButton = document.createElement('div'); 
-            taskDeleteButton.className = 'class-delete-button'
-            taskDeleteButton.attributeStyleMap = '<i class="fa fa-trash-o style="font-size:24px></i>'
+            const taskDeleteButton = document.createElement('i');
+            taskDeleteButton.className = 'fa fa-trash-o delete-button';
 
+            taskDeleteButton.addEventListener('click', () => {
+                taskList.removeChild(taskItem);
+            });
 
             checkbox.addEventListener('click', () => {
                 checkbox.classList.toggle('completed');
@@ -39,8 +41,8 @@
 
             taskItem.appendChild(checkbox);
             taskItem.appendChild(taskNameElement);
-            taskList.appendChild(taskItem);
             taskItem.appendChild(taskDeleteButton);
+            taskList.appendChild(taskItem);
 
             taskInput.value = '';
         });
